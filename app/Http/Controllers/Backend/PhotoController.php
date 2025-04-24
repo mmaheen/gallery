@@ -36,6 +36,9 @@ class PhotoController extends Controller
             [
                 'description'=>'required',
                 'photo'=>'required'
+            ],
+            [
+                'description.required'=>'Please, add some text'
             ]
         );
         try{
