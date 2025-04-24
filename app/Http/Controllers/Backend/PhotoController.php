@@ -32,19 +32,30 @@ class PhotoController extends Controller
     {
         //
         // return $request;
-        $photo_name = null;
-        if(isset($request->photo)){
-            $photo_name=time().'.'.$request->photo->extension();
-            $request->photo->move(public_path('uploads/photos'),$photo_name);
-        }
+        $request->validate(
+            [
+                'description'=>'required',
+                'photo'=>'required'
+            ]
+        );
+        try{
+            $photo_name = null;
+            if(isset($request->photo)){
+                $photo_name=time().'.'.$request->photo->extension();
+                $request->photo->move(public_path('uploads/photos'),$photo_name);
+            }
 
-        $photo = new Photo;
-        $photo->description = $request->description;
-        $photo->photo = $photo_name;
-        $photo->user_id = 1;
-        $photo->save();
-        
-        return $photo_name;
+            $photo = new Photo;
+            $photo->description = $request->description;
+            $photo->photo = $photo_name;
+            $photo->user_id = 1;
+            $photo->save();
+            
+            return $photo_name;
+        }
+        catch(Exception $error){
+            dd($errorr->getMessage());
+        }
     }
 
     /**
