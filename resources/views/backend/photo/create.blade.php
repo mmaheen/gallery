@@ -11,7 +11,7 @@
                 </span>
             @enderror
             <div class="form-group">
-                <input type="text" name="description" class="form-control rounded-0" placeholder="Enter Description"/>
+                <input type="text" name="title" class="form-control rounded-0" placeholder="Enter Photo Title" required/>
             </div>
 
             @error('photo')

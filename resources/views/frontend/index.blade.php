@@ -27,7 +27,7 @@
                     <figure class="effect-ming tm-video-item">
                         <img src="{{asset('uploads/photos')}}/{{$photo->photo}}" alt="Image" class="img-fluid">
                         <figcaption class="d-flex align-items-center justify-content-center">
-                            <h2>{{$photo->description}}</h2>
+                            <h2>{{$photo->title}}</h2>
                             <a href="{{route('photo.details',$photo->id)}}">View more</a>
                         </figcaption>                    
                     </figure>

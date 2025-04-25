@@ -12,7 +12,7 @@
 
     <div class="container-fluid tm-container-content tm-mt-60">
         <div class="row mb-4">
-            <h2 class="col-12 tm-text-primary">{{$photo->description}}</h2>
+            <h2 class="col-12 tm-text-primary">{{$photo->title}}</h2>
         </div>
         <div class="row tm-mb-90">            
             <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
@@ -62,7 +62,7 @@
                     <figure class="effect-ming tm-video-item">
                         <img src="{{asset('uploads/photos')}}/{{$photo->photo}}" alt="Image" class="img-fluid">
                         <figcaption class="d-flex align-items-center justify-content-center">
-                            <h2>{{$photo->description}}</h2>
+                            <h2>{{$photo->title}}</h2>
                             <a href="{{route('photo.details',$photo)}}">View more</a>
                         </figcaption>                    
                     </figure>

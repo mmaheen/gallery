@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unSignedBigInteger('user_id'); //For foreign key unsiged ig integer
             $table->string('photo');
-            $table->text('description');
+            $table->text('title');
             $table->integer('views');
             $table->timestamps();
 

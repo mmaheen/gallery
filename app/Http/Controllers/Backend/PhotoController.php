@@ -34,7 +34,7 @@ class PhotoController extends Controller
         // return $request;
         $request->validate(
             [
-                'description'=>'required',
+                'title'=>'required',
                 'photo'=>'required'
             ],
             [
@@ -49,13 +49,13 @@ class PhotoController extends Controller
             }
 
             $photo = new Photo;
-            $photo->description = $request->description;
+            $photo->title = $request->title;
             $photo->photo = $photo_name;
             $photo->user_id = 1;
             $photo->views = 0;
             $photo->save();
             
-            return $photo_name;
+            return redirect()->route('index');
         }
         catch(Exception $error){
             dd($errorr->getMessage());
