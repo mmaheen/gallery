@@ -25,6 +25,8 @@ class SiteController extends Controller
 
     public function photo_details($id){
         $photo = Photo::find($id);
+        $photo->views=$photo->views+1;
+        $photo->update();
         $related_photos = Photo::latest()->take(8)->get();
         return view('frontend.show.photo',compact('photo','related_photos'));
     }
