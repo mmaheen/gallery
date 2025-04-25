@@ -28,7 +28,7 @@ class PhotoSeeder extends Seeder
 
         $file_count = count(File::files($destinationPath));
 
-        foreach(range(1,$file_count) as $index){
+        foreach(range(1,$file_count*10) as $index){
             $photos = File::files($destinationPath); //select all files
             $random_photo = $photos[array_rand($photos)];
             $photo_name = $random_photo->getFilename();

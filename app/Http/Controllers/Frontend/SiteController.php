@@ -11,7 +11,7 @@ class SiteController extends Controller
 {
     //
     public function index(){
-        $photos=Photo::latest()->get();
+        $photos=Photo::latest()->paginate(16);
         return view ('frontend.index',compact('photos'));
     }
 
