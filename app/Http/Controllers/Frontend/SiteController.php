@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\User;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
