@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <h3 class="tm-text-gray-dark mb-3">License</h3>
+                        <h3 class="tm-text-gray-dark mb-3">{{$photo->category->name}}</h3>
                         <p>Free for both personal and commercial use. No need to pay anything. No need to make any attribution.</p>
                     </div>
                     <div>
@@ -73,9 +73,6 @@
                 </div>
             @endforeach        
         </div>
-        <div>
-            {{$related_photos->links()}}
-        </div> <!-- row -->
     </div> <!-- container-fluid, tm-container-content -->
 
 @endsection

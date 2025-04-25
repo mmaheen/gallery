@@ -33,7 +33,7 @@ class CategorySeeder extends Seeder
             $photo_name=$random_photo->getFilename();
             Category::create([
                 'name'=>$faker->realText($maxNbChars=20,$indexSize=2),
-                'photo'=>$photo_name,
+                'image'=>$photo_name,
                 'user_id' =>$random_user_id,
                 'created_at' => $faker->dateTime()
             ]);
