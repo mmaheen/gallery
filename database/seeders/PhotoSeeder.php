@@ -6,6 +6,7 @@ use File;
 use Faker\Factory;
 use App\Models\User;
 use App\Models\Photo;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -18,7 +19,6 @@ class PhotoSeeder extends Seeder
     {
         //
         $faker = Factory::create();
-        $randomUserId = User::inRandomOrder()->first()->id;
 
         $sourcePath = public_path('assets/frontend/img');
         $destinationPath = public_path('uploads/photos');
@@ -29,6 +29,9 @@ class PhotoSeeder extends Seeder
         $file_count = count(File::files($destinationPath));
 
         foreach(range(1,$file_count*10) as $index){
+            $randomUserId = User::inRandomOrder()->first()->id;
+            $randomCategoryId = Category::inRandomOrder()->first()->id;
+            
             $photos = File::files($destinationPath); //select all files
             $random_photo = $photos[array_rand($photos)];
             $photo_name = $random_photo->getFilename();
@@ -38,6 +41,7 @@ class PhotoSeeder extends Seeder
                     'photo'=>$photo_name,
                     'user_id'=> $randomUserId,
                     'title'=>$faker->sentence(5),
+                    'category_id'=>$randomCategoryId,
                     'views'=>rand(1,100000),
                     'created_at' => $faker->dateTime()
                 ]
