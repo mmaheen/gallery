@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Photo;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -22,7 +23,8 @@ class PhotoController extends Controller
     public function create()
     {
         //
-        return view('backend.photo.create');
+        $categories = Category::select('id','name')->get();
+        return view('backend.photo.create',compact('categories'));
     }
 
     /**
@@ -31,27 +33,28 @@ class PhotoController extends Controller
     public function store(Request $request)
     {
         //
-        // return $request;
         $request->validate(
             [
                 'title'=>'required',
+                'category'=>'required',
                 'photo'=>'required'
             ],
             [
-                'description.required'=>'Please, add some text'
+                'title.required'=>'Please, add some text'
             ]
         );
-        try{
-            $photo_name = null;
-            if(isset($request->photo)){
-                $photo_name=time().'.'.$request->photo->extension();
-                $request->photo->move(public_path('uploads/photos'),$photo_name);
-            }
+        $photo_name = null;
+        if(isset($request->photo)){
+            $photo_name=time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('uploads/photos'),$photo_name);
+        }
 
+        try{
             $photo = new Photo;
             $photo->title = $request->title;
             $photo->photo = $photo_name;
             $photo->user_id = 1;
+            $photo->category_id = $request->category;
             $photo->views = 0;
             $photo->save();
             
