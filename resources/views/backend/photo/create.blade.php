@@ -16,7 +16,7 @@
                 </span>
             @enderror
             <div class="form-group">
-                <input type="text" name="title" value = "{{old('title')}}" class="form-control rounded-0" placeholder="Enter Photo Title"  />
+                <input type="text" name="title" value = "{{old('title')}}" class="form-control rounded-0" placeholder="Enter Photo Title" required/>
             </div>
 
             @error('category')
@@ -39,7 +39,7 @@
                 </span>
             @enderror
             <div class="form-group">
-                <input type="file" name="photo" class="form-control"/>
+                <input type="file" name="photo" class="form-control" required/>
             </div>
             
 
