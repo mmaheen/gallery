@@ -10,13 +10,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-1 active" aria-current="page" href="{{route('index')}}">Photos</a>
+                    <a class="nav-link nav-link-1 {{Route::currentRouteName()=='index' ? 'active':''}}" aria-current="page" href="{{route('index')}}">Photos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-2" href="{{route('videos')}}">Videos</a>
+                    <a class="nav-link nav-link-2 {{Route::currentRouteName()=='videos' ? 'active':''}}" href="{{route('videos')}}">Videos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-3" href="{{route('about')}}">About</a>
+                    <a class="nav-link nav-link-3 {{Route::currentRouteName()=='about' ? 'active':''}}" href="{{route('about')}}">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-4" href="#">Contact</a>
