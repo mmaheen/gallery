@@ -19,7 +19,7 @@
                     <a class="nav-link nav-link-3 {{Route::currentRouteName()=='about' ? 'active':''}}" href="{{route('about')}}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-4" href="#">Contact</a>
+                    <a class="nav-link nav-link-4 {{Route::currentRouteName()=='create' ? 'active':''}}" href="{{route('photo.create')}}">Upload</a>
                 </li>
             </ul>
             </div>

@@ -33,13 +33,13 @@
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">
                         <span class="tm-text-gray-light">{{$photo->created_at}}</span>
-                        <span>9,906 views</span>
+                        <span>{{$photo->views}} views</span>
                     </div>
                 </div>
             @endforeach
-        	
-            
         </div> <!-- row -->
+        
+        
         <div class="row tm-mb-90">
             <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
                 <a href="javascript:void(0);" class="btn btn-primary tm-btn-prev mb-2 disabled">Previous</a>

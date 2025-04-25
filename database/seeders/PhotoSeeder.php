@@ -38,6 +38,7 @@ class PhotoSeeder extends Seeder
                     'photo'=>$photo_name,
                     'user_id'=> $randomUserId,
                     'description'=>$faker->sentence(5),
+                    'views'=>rand(1,100000),
                 ]
             );
         }

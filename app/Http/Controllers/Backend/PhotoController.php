@@ -52,6 +52,7 @@ class PhotoController extends Controller
             $photo->description = $request->description;
             $photo->photo = $photo_name;
             $photo->user_id = 1;
+            $photo->views = 0;
             $photo->save();
             
             return $photo_name;

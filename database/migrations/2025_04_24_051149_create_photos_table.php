@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unSignedBigInteger('user_id'); //For foreign key unsiged ig integer
             $table->string('photo');
             $table->text('description');
+            $table->integer('views');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();

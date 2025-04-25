@@ -68,7 +68,7 @@
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">
                         <span class="tm-text-gray-light">{{$photo->created_at}}</span>
-                        <span>12,460 views</span>
+                        <span>{{$photo->views}} views</span>
                     </div>
                 </div>
             @endforeach        
