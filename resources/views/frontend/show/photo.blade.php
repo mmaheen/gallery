@@ -72,6 +72,9 @@
                     </div>
                 </div>
             @endforeach        
+        </div>
+        <div>
+            {{$related_photos->links()}}
         </div> <!-- row -->
     </div> <!-- container-fluid, tm-container-content -->
 
