@@ -16,7 +16,7 @@
                 </span>
             @enderror
             <div class="form-group">
-                <input type="text" name="title" class="form-control rounded-0" placeholder="Enter Photo Title"  />
+                <input type="text" name="title" value = "{{old('title')}}" class="form-control rounded-0" placeholder="Enter Photo Title"  />
             </div>
 
             @error('category')
@@ -28,7 +28,7 @@
                 <select class="form-control" id="contact-select" name="category">
                     <option value="" selected>Category</option>
                     @foreach($categories as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        <option value="{{$category->id}}" {{old('category') == $category->id ? 'selected':''}}>{{$category->name}}</option>
                     @endforeach
                 </select>
             </div>
