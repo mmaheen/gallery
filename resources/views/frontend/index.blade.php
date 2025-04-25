@@ -1,5 +1,9 @@
 @extends('frontend.layouts.layout')
 
+@section('title')
+    Home
+@endsection
+
 @section('content')
 <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="{{asset('assets/frontend')}}/img/hero.jpg">
         <form class="d-flex tm-search-form">

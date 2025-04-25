@@ -1,5 +1,9 @@
 @extends('frontend.layouts.layout')
 
+@section('title')
+    Videos
+@endsection
+
 @section('content')
     <div class="tm-hero d-flex justify-content-center align-items-center" id="tm-video-container">
         <video autoplay muted loop id="tm-video">
