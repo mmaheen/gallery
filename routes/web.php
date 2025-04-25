@@ -9,6 +9,7 @@ Route::get('/',[SiteController::class,'index'])->name('index');
 Route::get('/videos',[SiteController::class,'videos'])->name('videos');
 Route::get('/about',[SiteController::class,'about'])->name('about');
 Route::get('/photo/details/{photo}',[SiteController::class,'photo_details'])->name('photo.details');
+Route::get('/photo/download/{id}',[SiteController::class,'downloadPhoto'])->name('photo.download');
 
 Route::resources([
     'photo'=>PhotoController::class,

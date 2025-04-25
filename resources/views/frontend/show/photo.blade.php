@@ -28,7 +28,7 @@
                         Please support us by making <a href="https://paypal.me/templatemo" target="_parent" rel="sponsored">a PayPal donation</a>. Nam ex nibh, efficitur eget libero ut, placerat aliquet justo. Cras nec varius leo.
                     </p>
                     <div class="text-center mb-5">
-                        <a href="#" class="btn btn-primary tm-btn-big">Download</a>
+                        <a href="{{route('photo.download',$photo->id)}}" class="btn btn-primary tm-btn-big">Download</a>
                     </div>                    
                     <div class="mb-4 d-flex flex-wrap">
                         <div class="mr-4 mb-2">

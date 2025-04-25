@@ -34,4 +34,11 @@ class SiteController extends Controller
         $related_photos = $category->photo;
         return view('frontend.show.photo',compact('photo','related_photos'));
     }
+    
+    public function downloadPhoto(String $id) {
+        $photo = Photo::find($id);
+        $filePath = public_path('uploads/photos/'.$photo->photo); // Path to the file
+        $fileName = 'Gallery'.' '.'-'.' '.$photo->photo; // Name for the downloaded file
+        return response()->download($filePath, $fileName);
+    }
 }
