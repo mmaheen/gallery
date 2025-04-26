@@ -10,6 +10,8 @@ Route::get('/videos',[SiteController::class,'videos'])->name('videos');
 Route::get('/about',[SiteController::class,'about'])->name('about');
 Route::get('/photo/details/{photo}',[SiteController::class,'photo_details'])->name('photo.details');
 Route::get('/photo/download/{id}',[SiteController::class,'downloadPhoto'])->name('photo.download');
+Route::get('/categories',[SiteController::class,'categories'])->name('categories');
+Route::get('/category/details/{id}',[SiteController::class,'category_details'])->name('category.details');
 
 Route::resources([
     'photo'=>PhotoController::class,

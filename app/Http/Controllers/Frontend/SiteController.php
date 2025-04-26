@@ -41,4 +41,15 @@ class SiteController extends Controller
         $fileName = 'Gallery'.' '.'-'.' '.$photo->photo; // Name for the downloaded file
         return response()->download($filePath, $fileName);
     }
+
+    public function categories(){
+        $categories = Category::latest()->get();
+        return view ('frontend.show.categories',compact('categories'));
+    }
+
+    public function category_details($id){
+        $category = Category::find($id);
+        return view('frontend.show.category',compact('category'));
+
+    }
 }

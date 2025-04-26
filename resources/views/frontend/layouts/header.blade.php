@@ -16,6 +16,9 @@
                     <a class="nav-link nav-link-2 {{Route::currentRouteName()=='videos' ? 'active':''}}" href="{{route('videos')}}">Videos</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link nav-link-2 {{Route::currentRouteName()=='categories' ? 'active':''}}" href="{{route('categories')}}">Categories</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link nav-link-3 {{Route::currentRouteName()=='about' ? 'active':''}}" href="{{route('about')}}">About</a>
                 </li>
                 <li class="nav-item">
