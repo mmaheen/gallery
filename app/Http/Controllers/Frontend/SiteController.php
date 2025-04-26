@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Models\User;
 use App\Models\Photo;
+use App\Models\Video;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,7 +18,8 @@ class SiteController extends Controller
     }
 
     public function videos(){
-        return view ('frontend.videos');
+        $videos = Video::latest()->paginate(16);
+        return view ('frontend.videos',compact('videos'));
     }
 
     public function about(){
