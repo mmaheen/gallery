@@ -16,16 +16,16 @@
                     <a class="nav-link nav-link-2 {{Route::currentRouteName()=='videos' ? 'active':''}}" href="{{route('videos')}}">Videos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-2 {{Route::currentRouteName()=='categories' ? 'active':''}}" href="{{route('categories')}}">Categories</a>
+                    <a class="nav-link nav-link-3 {{Route::currentRouteName()=='categories' ? 'active':''}}" href="{{route('categories')}}">Categories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-3 {{Route::currentRouteName()=='about' ? 'active':''}}" href="{{route('about')}}">About</a>
+                    <a class="nav-link nav-link-4 {{Route::currentRouteName()=='about' ? 'active':''}}" href="{{route('about')}}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-4 {{Route::currentRouteName()=='home.signin' ? 'active':''}}" href="{{route('home.signin')}}">Sign In</a>
+                    <a class="nav-link nav-link-2 {{Route::currentRouteName()=='home.signin' ? 'active':''}}" href="{{route('home.signin')}}">Sign In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-4 {{Route::currentRouteName()=='home.signup' ? 'active':''}}" href="{{route('home.signup')}}">Sign Up</a>
+                    <a class="nav-link nav-link-1 {{Route::currentRouteName()=='home.signup' ? 'active':''}}" href="{{route('home.signup')}}">Sign Up</a>
                 </li>
             </ul>
             </div>
