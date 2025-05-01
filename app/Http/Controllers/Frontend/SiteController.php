@@ -26,6 +26,14 @@ class SiteController extends Controller
         return view('frontend.about');
     }
 
+    public function signin(){
+        return view ('frontend.signin');
+    }
+    
+    public function signup(){
+        return view ('frontend.signup');
+    }
+
     public function photo_details($id){
         $photo = Photo::find($id);
         $categoryId= $photo->category->id;

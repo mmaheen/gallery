@@ -9,6 +9,8 @@ use App\Http\Controllers\Backend\DashboardController;
 Route::get('/',[SiteController::class,'index'])->name('index');
 Route::get('/videos',[SiteController::class,'videos'])->name('videos');
 Route::get('/about',[SiteController::class,'about'])->name('about');
+Route::get('/signin',[SiteController::class,'signin'])->name('home.signin');
+Route::get('/signup',[SiteController::class,'signup'])->name('home.signup');
 Route::get('/photo/details/{photo}',[SiteController::class,'photo_details'])->name('photo.details');
 Route::get('/photo/download/{id}',[SiteController::class,'downloadPhoto'])->name('photo.download');
 Route::get('/categories',[SiteController::class,'categories'])->name('categories');
