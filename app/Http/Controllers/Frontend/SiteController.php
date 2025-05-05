@@ -42,8 +42,10 @@ class SiteController extends Controller
         $categoryId= $photo->category->id;
         $category = Category::find($categoryId);
         // return $category->photo;
+        
         $photo->views=$photo->views+1;
         $photo->update();
+
         $related_photos = $category->photo;
         return view('frontend.show.photo',compact('photo','related_photos','width','height'));
     }
