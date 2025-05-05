@@ -36,10 +36,11 @@
             @foreach($videos as $video)
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                     <figure class="effect-ming tm-video-item">
-                        <video width="420" height="236" autoplay muted loop>
+                        <img src="{{asset('uploads/videos/thumbnails')}}/{{$video->thumbnail}}" alt="Image" class="img-fluid">
+                        {{--<video width="420" height="236" autoplay muted loop>
                             <source src="{{asset('uploads/videos')}}/{{$video->video}}" type="video/mp4">
                             Your browser does not support the video tag.
-                        </video>
+                        </video>--}}
                         <figcaption class="d-flex align-items-center justify-content-center">
                             <h2>{{$video->title}}</h2>
                             <a href="#">View more</a>

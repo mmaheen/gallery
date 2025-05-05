@@ -19,18 +19,28 @@ class VideoSeeder extends Seeder
         //
         $faker = Factory::create();
 
-        $sourece_path = public_path('assets/frontend/video');
-        $destination_path = public_path('uploads/videos');
+        $video_sourece_path = public_path('assets/frontend/video');
+        $video_destination_path = public_path('uploads/videos');
        
-        File::cleanDirectory($destination_path);
-        File::copyDirectory($sourece_path,$destination_path);
+        File::cleanDirectory($video_destination_path);
+        File::copyDirectory($video_sourece_path,$video_destination_path);
 
-        $file_count=count(File::files($destination_path));
+        $file_count=count(File::files($video_destination_path));
+
+        $thumbnail_source_path = public_path('assets/frontend/img');
+        $thumbnail_destination_path = public_path('uploads/videos/thumbnails');
+
+        File::cleanDirectory($thumbnail_destination_path);
+        File::copyDirectory($thumbnail_source_path,$thumbnail_destination_path);
 
         foreach(range(1,$file_count*10) as $index){
-            $videos=File::files($destination_path);
+            $videos=File::files($video_destination_path);
             $random_videos=$videos[array_rand($videos)];
             $video_name= $random_videos->getFileName();
+
+            $thumbnails=File::files($thumbnail_destination_path);
+            $random_thumbnails=$thumbnails[array_rand($thumbnails)];
+            $thumbnail_name = $random_thumbnails->getFileName();
 
             $random_category_id = Category::inRandomOrder()->first()->id;
 
@@ -38,6 +48,7 @@ class VideoSeeder extends Seeder
                 'title'=> $faker->sentence(4),
                 'category_id' => $random_category_id,
                 'video'=>$video_name,
+                'thumbnail' => $thumbnail_name,
                 'views' =>rand(1,300000),
                 'created_at'=>$faker->dateTime()
             ]);

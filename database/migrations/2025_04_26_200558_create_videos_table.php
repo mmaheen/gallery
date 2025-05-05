@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->unSignedBigInteger('category_id');
             $table->string('video');
+            $table->string('thumbnail');
             $table->integer('views');
             $table->timestamps();
 
