@@ -43,6 +43,9 @@
                         <div class="mr-4 mb-2">
                             <span class="tm-text-gray-dark">Uploader: </span><span class="tm-text-primary">{{$photo->user->name}}</span>
                         </div>
+                        <div class="mr-4 mb-2">
+                            <span class="tm-text-gray-dark">At: </span><span class="tm-text-primary">{{$photo->created_at}}</span>
+                        </div>
                     </div>
                     <div class="mb-4">
                         <h3 class="tm-text-gray-dark mb-3">{{$photo->category->name}}</h3>

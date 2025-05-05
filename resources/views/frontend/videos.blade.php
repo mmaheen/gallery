@@ -46,7 +46,7 @@
                         </figcaption>                    
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">
-                        <span>{{$video->created_at}}</span>
+                        <span>{{ date('F j, Y', strtotime($video->created_at)) }}</span>
                         <span>{{$video->views}} views</span>
                     </div>
                 </div>
