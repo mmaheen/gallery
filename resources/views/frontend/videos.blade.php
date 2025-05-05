@@ -43,7 +43,7 @@
                         </video>--}}
                         <figcaption class="d-flex align-items-center justify-content-center">
                             <h2>{{$video->title}}</h2>
-                            <a href="#">View more</a>
+                            <a href="{{route('video.details',$video->id)}}">View more</a>
                         </figcaption>                    
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">

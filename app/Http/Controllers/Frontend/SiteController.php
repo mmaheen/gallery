@@ -72,6 +72,11 @@ class SiteController extends Controller
     public function category_details($id){
         $category = Category::find($id);
         return view('frontend.show.category',compact('category'));
+    }
 
+    public function video_details($id){
+        $video = Video::find($id);
+        // return $video;
+        return view('frontend.show.video', compact('video'));
     }
 }

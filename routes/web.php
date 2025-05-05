@@ -15,6 +15,7 @@ Route::get('/photo/details/{photo}',[SiteController::class,'photo_details'])->na
 Route::get('/photo/download/{id}',[SiteController::class,'downloadPhoto'])->name('photo.download');
 Route::get('/categories',[SiteController::class,'categories'])->name('categories');
 Route::get('/category/details/{id}',[SiteController::class,'category_details'])->name('category.details');
+Route::get('/video/details/{video}',[SiteController::class,'video_details'])->name('video.details');
 
 Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard.index');
 Route::get('/dashboard/table',[DashboardController::class,'table'])->name('dashboard.table');
