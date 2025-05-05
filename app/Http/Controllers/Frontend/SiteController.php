@@ -78,8 +78,16 @@ class SiteController extends Controller
         $video = Video::find($id);
         // return $video;
 
+        $categoryId = $video->category_id;
+        $category = Category::find($categoryId);
+        // return $category->video;
+
+        $related_videos = $category->video;
+
+        $categories = Category::inRandomOrder()->take(10)->get();
+
         $video->views = $video->views+1;
         $video->update();
-        return view('frontend.show.video', compact('video'));
+        return view('frontend.show.video', compact('video','related_videos','categories'));
     }
 }
