@@ -35,7 +35,7 @@
                             <span class="tm-text-gray-dark">Dimension: </span><span class="tm-text-primary">{{$width}}x{{$height}}</span>
                         </div>
                         <div class="mr-4 mb-2">
-                            <span class="tm-text-gray-dark">Format: </span><span class="tm-text-primary">JPG</span>
+                            <span class="tm-text-gray-dark">Format: </span><span class="tm-text-primary">{{$photo_format}}</span>
                         </div>
                     </div>
                     <div class="mb-4">
