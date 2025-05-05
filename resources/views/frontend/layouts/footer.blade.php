@@ -11,15 +11,15 @@
                         <li><a href="#">Advertise</a></li>
                         <li><a href="#">Support</a></li>
                         <li><a href="#">Our Company</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="tel:+8801614967501">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
                     <ul class="tm-social-links d-flex justify-content-end pl-0 mb-5">
-                        <li class="mb-2"><a href="https://facebook.com"><i class="fab fa-facebook"></i></a></li>
-                        <li class="mb-2"><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
+                        <li class="mb-2"><a href="https://github.com/mmaheen"><i class="fab fa-github"></i></a></li>
+                        <li class="mb-2"><a href="https://www.linkedin.com/in/mmmugdha/"><i class="fab fa-linkedin"></i></a></li>
                         <li class="mb-2"><a href="https://instagram.com"><i class="fab fa-instagram"></i></a></li>
-                        <li class="mb-2"><a href="https://pinterest.com"><i class="fab fa-pinterest"></i></a></li>
+                        <li class="mb-2"><a href="https://www.facebook.com/mushrif.maheen.mugdha/"><i class="fab fa-facebook"></i></a></li>
                     </ul>
                     <a href="#" class="tm-text-gray text-right d-block mb-2">Terms of Use</a>
                     <a href="#" class="tm-text-gray text-right d-block">Privacy Policy</a>
