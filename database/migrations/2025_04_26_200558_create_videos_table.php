@@ -15,12 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->unSignedBigInteger('category_id');
+            $table->unSignedBigInteger('user_id');
             $table->string('video');
             $table->string('thumbnail');
             $table->integer('views');
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
+            $table->foreign('user_id')->references('id')->on('users')->casccadeOnDelete();
         });
     }
 

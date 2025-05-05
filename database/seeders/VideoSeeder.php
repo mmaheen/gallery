@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use File;
 use Faker\Factory;
+use App\Models\User;
 use App\Models\Video;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
@@ -43,10 +44,12 @@ class VideoSeeder extends Seeder
             $thumbnail_name = $random_thumbnails->getFileName();
 
             $random_category_id = Category::inRandomOrder()->first()->id;
+            $random_user_id = User::inRandomOrder()->first()->id;
 
             Video::create([
                 'title'=> $faker->sentence(4),
                 'category_id' => $random_category_id,
+                'user_id'=>$random_user_id,
                 'video'=>$video_name,
                 'thumbnail' => $thumbnail_name,
                 'views' =>rand(1,300000),
