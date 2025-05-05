@@ -43,9 +43,9 @@
                         <div class="mr-4 mb-2">
                             <span class="tm-text-gray-dark">Views: </span><span class="tm-text-primary">{{$video->views}}</span>
                         </div>
-                        {{--<div class="mr-4 mb-2">
+                        <div class="mr-4 mb-2">
                             <span class="tm-text-gray-dark">Uploader: </span><span class="tm-text-primary">{{$video->user->name}}</span>
-                        </div>--}}
+                        </div>
                         <div class="mr-4 mb-2">
                             <span class="tm-text-gray-dark">At: </span><span class="tm-text-primary">{{$video->created_at}}</span>
                         </div>
