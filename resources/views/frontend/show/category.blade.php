@@ -17,8 +17,13 @@
     <div class="container-fluid tm-container-content tm-mt-60">
         <div class="row mb-4">
             <h2 class="col-6 tm-text-primary">
-                {{$category->name}}
+                Category: {{$category->name}}
             </h2>
+        </div>
+        <div class="row mb-4">
+            <h4 class="col-6 tm-text-primary">
+                Photos
+            </h4>
         </div>
         <div class="row tm-mb-90 tm-gallery">
             @foreach($category->photo as $photo)
@@ -50,5 +55,30 @@
                 <a href="javascript:void(0);" class="btn btn-primary tm-btn-next">Next Page</a>
             </div>            
         </div>--}}
+    </div>
+
+    <div class="container-fluid tm-container-content tm-mt-60">
+        <div class="row mb-4">
+            <h4 class="col-6 tm-text-primary">
+                Videos
+            </h4>
+        </div>
+        <div class="row tm-mb-90 tm-gallery">
+            @foreach($category->video as $video)
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
+                    <figure class="effect-ming tm-video-item">
+                        <img src="{{asset('uploads/videos/thumbnails')}}/{{$video->thumbnail}}" alt="Image" class="img-fluid">
+                        <figcaption class="d-flex align-items-center justify-content-center">
+                            <h2>{{$video->title}}</h2>
+                            <a href="{{route('video.details',$video->id)}}">View more</a>
+                        </figcaption>                    
+                    </figure>
+                    <div class="d-flex justify-content-between tm-text-gray">
+                        <span class="tm-text-gray-light">{{ date('F j, Y', strtotime($video->created_at)) }}</span>
+                        <span>{{$video->views}} views</span>
+                    </div>
+                </div>
+            @endforeach
+        </div> <!-- row -->
     </div>
 @endsection
