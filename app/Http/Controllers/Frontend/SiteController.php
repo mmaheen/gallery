@@ -48,10 +48,13 @@ class SiteController extends Controller
         // return $category->photo;
         $related_photos = $category->photo;
 
+        $categories=Category::inRandomOrder()->select('id','name')->take(10)->get();
+        // return $categories;
+
         $photo->views=$photo->views+1;
         $photo->update();
 
-        return view('frontend.show.photo',compact('photo','related_photos','width','height','photo_format'));
+        return view('frontend.show.photo',compact('photo','related_photos','width','height','photo_format','categories'));
     }
     
     public function downloadPhoto(String $id) {

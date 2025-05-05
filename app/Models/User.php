@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Photo;
 use App\Models\Category;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -49,5 +50,9 @@ class User extends Authenticatable
 
     public function category(){
         return $this->hasMany(Category::class);
+    }
+
+    public function photo(){
+        return $this->hasMany(Photo::class);
     }
 }

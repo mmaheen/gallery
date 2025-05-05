@@ -40,6 +40,9 @@
                         <div class="mr-4 mb-2">
                             <span class="tm-text-gray-dark">Views: </span><span class="tm-text-primary">{{$photo->views}}</span>
                         </div>
+                        <div class="mr-4 mb-2">
+                            <span class="tm-text-gray-dark">Uploader: </span><span class="tm-text-primary">{{$photo->user->name}}</span>
+                        </div>
                     </div>
                     <div class="mb-4">
                         <h3 class="tm-text-gray-dark mb-3">{{$photo->category->name}}</h3>
@@ -47,13 +50,9 @@
                     </div>
                     <div>
                         <h3 class="tm-text-gray-dark mb-3">Tags</h3>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Cloud</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Bluesky</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Nature</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Background</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Timelapse</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Night</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Real Estate</a>
+                        @foreach($categories as $category)
+                            <a href="{{route('category.details',$category->id)}}" class="tm-text-primary mr-4 mb-2 d-inline-block">{{$category->name}}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>
