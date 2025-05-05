@@ -7,7 +7,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
-            <div class="col-5">
+            <div class="col-12 col-sm-10 col-md-10 col-lg-5 col-xl-5">
                 <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <a href="{{route('index')}}" class="">
