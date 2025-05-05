@@ -20,7 +20,7 @@
         </div>
         <div class="row tm-mb-90">            
             <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <video width="1200" autoplay muted loop>
+                <video height = "600" autoplay muted loop controls>
                     <source src="{{asset('uploads/videos')}}/{{$video->video}}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>

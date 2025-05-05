@@ -77,6 +77,9 @@ class SiteController extends Controller
     public function video_details($id){
         $video = Video::find($id);
         // return $video;
+
+        $video->views = $video->views+1;
+        $video->update();
         return view('frontend.show.video', compact('video'));
     }
 }
