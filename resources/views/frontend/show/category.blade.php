@@ -31,7 +31,7 @@
                         </figcaption>                    
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">{{$photo->created_at}}</span>
+                        <span class="tm-text-gray-light">{{ date('F j, Y', strtotime($photo->created_at)) }}</span>
                         <span>{{$photo->views}} views</span>
                     </div>
                 </div>
