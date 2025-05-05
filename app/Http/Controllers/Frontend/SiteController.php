@@ -36,13 +36,16 @@ class SiteController extends Controller
 
     public function photo_details($id){
         $photo = Photo::find($id);
+        $filePath = public_path('uploads/photos/'.$photo->photo);
+        list($width, $height) = getimagesize($filePath);
+
         $categoryId= $photo->category->id;
         $category = Category::find($categoryId);
         // return $category->photo;
         $photo->views=$photo->views+1;
         $photo->update();
         $related_photos = $category->photo;
-        return view('frontend.show.photo',compact('photo','related_photos'));
+        return view('frontend.show.photo',compact('photo','related_photos','width','height'));
     }
     
     public function downloadPhoto(String $id) {
