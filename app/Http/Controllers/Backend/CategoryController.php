@@ -48,6 +48,8 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         //
+        // return $category;
+        return view('backend.category.edit',compact('category'));
     }
 
     /**
@@ -56,6 +58,26 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         //
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required'
+        ],[
+            'name.required' => 'Category title required'
+        ]);
+        $photo_name = null;
+        if(isset($request->image)){
+            $photo_name = time().'_updated_'.'.'.$request->image->extension();
+            $request->image->move(public_path('uploads/categories'),$photo_name);
+        }
+        try{
+            $category->name = $request->name;
+            $category->image = $photo_name;
+            $category->update();
+            return redirect()->route('category.index');
+        }
+        catch(Exception $error){
+            $error->getMessage();
+        }
     }
 
     /**

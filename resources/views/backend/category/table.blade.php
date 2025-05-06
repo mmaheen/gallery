@@ -36,7 +36,7 @@
                                         <button class = "btn btn-danger" onclick = "event.preventDefault(); this.closest('form').submit()">Delete</button>
                                     </form>
                                     
-                                    <button class = "btn btn-warning">Edit</button>
+                                    <a href = "{{route('category.edit',$category->id)}}" class = "btn btn-warning">Edit</a>
                                 </div>
                             </td>
                         </tr>

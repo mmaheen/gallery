@@ -50,7 +50,7 @@
                         <input class="form-control form-control-lg" id="formFileLg" type="file" name="photo">
                     </div>
 
-                    <button type="submit" class="btn btn-primary mt-3">Upload</button>
+                    <button type="submit" class="btn btn-primary mt-3">Update</button>
                 </div>
             </form>
         </div>
