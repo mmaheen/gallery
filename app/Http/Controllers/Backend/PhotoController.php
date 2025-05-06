@@ -15,7 +15,7 @@ class PhotoController extends Controller
     public function index()
     {
         //
-        $photos = Photo::with('category','user')->paginate(20);
+        $photos = Photo::with('category','user')->latest()->paginate(20);
         return view('backend.photo.table',compact('photos'));
     }
 

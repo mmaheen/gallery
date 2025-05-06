@@ -7,7 +7,7 @@
 @section('content')
     <div class="col-12 mt-4">
         <div class="bg-light rounded h-100 p-4">
-            <h6 class="mb-4">Responsive Table</h6>
+            <h6 class="mb-4">Categories</h6>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
