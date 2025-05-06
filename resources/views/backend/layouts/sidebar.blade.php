@@ -25,9 +25,9 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="button.html" class="dropdown-item">Buttons</a>
-                    <a href="typography.html" class="dropdown-item">Typography</a>
-                    <a href="element.html" class="dropdown-item">Other Elements</a>
+                    <a href="{{route('photo.index')}}" class="dropdown-item">Photo</a>
+                    {{--<a href="{{route('video.index')}}" class="dropdown-item">Video</a>--}}
+                    <a href="{{route('category.index')}}" class="dropdown-item">Category</a>
                 </div>
             </div>
             <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
