@@ -28,9 +28,9 @@
                     <a href="{{route('photo.index')}}" class="dropdown-item">Photo</a>
                     {{--<a href="{{route('video.index')}}" class="dropdown-item">Video</a>--}}
                     <a href="{{route('category.index')}}" class="dropdown-item">Category</a>
+                    <a href="{{route('user.index')}}" class="dropdown-item">User</a>
                 </div>
             </div>
-            <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Authentication</a>
                 <div class="dropdown-menu bg-transparent border-0">

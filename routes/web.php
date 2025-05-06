@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\PhotoController;
 use App\Http\Controllers\Frontend\SiteController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -24,5 +25,6 @@ Route::get('/dashboard/sign-up',[DashboardController::class,'signup'])->name('da
 
 Route::resources([
     'photo'=>PhotoController::class,
-    'category'=>CategoryController::class
+    'category'=>CategoryController::class,
+    'user'=>UserController::class
 ]);
