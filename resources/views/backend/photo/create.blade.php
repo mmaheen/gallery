@@ -36,7 +36,7 @@
                                 <option value="{{$category->id}}" {{old('category') == $category->id ? 'selected':''}}>{{$category->name}}</option>
                             @endforeach
                         </select>
-                        <label for="floatingSelect">Category</label>
+                        <label for="floatingSelect">Select a category</label>
                     </div>
                     
                     @error('photo')
