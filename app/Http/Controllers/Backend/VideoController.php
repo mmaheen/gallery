@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Video;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -48,6 +49,10 @@ class VideoController extends Controller
     public function edit(string $id)
     {
         //
+        // return $id;
+        $video = Video::find($id);
+        $categories = Category::select('id','name')->get();
+        return view('backend.video.edit',compact('video','categories'));
     }
 
     /**
@@ -56,6 +61,33 @@ class VideoController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $video = Video::find($id);
+        $request->validate([
+            'title' =>  'required',
+            'video' => 'required',
+            'category'  =>  'required',
+            'thumbnail' => "required"
+        ]);
+
+        $video_name = null;
+        if(isset($request->video)){
+            $video_name = "Video_".time().'.'.$request->video->extension();
+            $request->video->move(public_path('uploads/videos'),$video_name);
+        }
+
+        $thumbnail_name = null;
+        if(isset($request->thumbnail)){
+            $thumbnail_name = "Thumbnail_".time().'.'.$request->thumbnail->extension();
+            $request->thumbnail->move(public_path('uploads/videos/thumbnails'),$thumbnail_name);
+        }
+
+        // return $thumbnail_name;
+        $video->title = $request->title;
+        $video->category_id = $request->category;
+        $video->video = $video_name;
+        $video->thumbnail = $thumbnail_name;
+        $video->update();
+        return redirect()->route('video.index');
     }
 
     /**
@@ -64,5 +96,9 @@ class VideoController extends Controller
     public function destroy(string $id)
     {
         //
+        // return $id;
+        $video = Video::find($id);
+        $video->delete();
+        return redirect()->back();
     }
 }
