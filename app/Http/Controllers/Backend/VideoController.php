@@ -25,6 +25,8 @@ class VideoController extends Controller
     public function create()
     {
         //
+        $categories = Category::select('id','name')->get();
+        return view('backend.video.create',compact('categories'));
     }
 
     /**
@@ -33,6 +35,36 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         //
+        $video = new Video;
+        $request->validate([
+            'title' =>  'required',
+            'video' => 'required',
+            'category'  =>  'required',
+            'thumbnail' => "required"
+        ]);
+
+        $video_name = null;
+        if(isset($request->video)){
+            $video_name = "Video_".time().'.'.$request->video->extension();
+            $request->video->move(public_path('uploads/videos'),$video_name);
+        }
+
+        $thumbnail_name = null;
+        if(isset($request->thumbnail)){
+            $thumbnail_name = "Thumbnail_".time().'.'.$request->thumbnail->extension();
+            $request->thumbnail->move(public_path('uploads/videos/thumbnails'),$thumbnail_name);
+        }
+
+        // return $thumbnail_name;
+        $video->title = $request->title;
+        $video->category_id = $request->category;
+        $video->video = $video_name;
+        $video->thumbnail = $thumbnail_name;
+        $video->user_id = rand(1,10);
+        $video->views = 0;
+        $video->save();
+        return redirect()->back();
+
     }
 
     /**

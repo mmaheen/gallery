@@ -1,27 +1,36 @@
 @extends('backend.layouts.layout')
 
 @section('title')
-    Photo Edit
+    Video Upload
 @endsection
 
 @section('content')
     <!-- Form Start -->
     <div class="container-fluid pt-4 px-4">
         <div class="row ">         
-            <form class="col-sm-12 col-xl-10" action="{{route('photo.update',$photo->id)}}" method="POST" enctype="multipart/form-data">
+            <form class="col-sm-12 col-xl-10" action="{{route('video.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('put')
                 <div class="bg-light rounded h-100 p-4">
-                    <h6 class="mb-4">Edit Photo</h6>
+                    <h6 class="mb-4">Upload Video</h6>
                     @error('title')
                         <span class="text-danger font-italic">
                             {{$message}}
                         </span> 
                     @enderror
                     <div class="form-floating mb-3">
-                        <input type="text" name="title" value = "{{$photo->title}}" class="form-control" id="floatingInput"
-                            placeholder="Photo title">
-                        <label for="floatingInput">Photo Title</label>
+                        <input type="text" name="title" value = "{{old('title')}}" class="form-control" id="floatingInput"
+                            placeholder="Video title">
+                        <label for="floatingInput">Video Title</label>
+                    </div>
+
+                    @error('video')
+                        <span class="text-danger font-italic">
+                            {{$message}}
+                        </span>
+                    @enderror
+                    <div class="mb-3">
+                        <label for="formFileLg" class="form-label">Select your Video</label>
+                        <input class="form-control form-control-lg" id="formFileLg" type="file" name="video">
                     </div>
                     
                     @error('category')
@@ -34,23 +43,23 @@
                             aria-label="Floating label select example">
                             <option value="" selected>Category</option>
                             @foreach($categories as $category)
-                                <option value="{{$category->id}}" {{$photo->category->id == $category->id ? 'selected':''}}>{{$category->name}}</option>
+                                <option value="{{$category->id}}" {{old('category') == $category->id ? 'selected':''}}>{{$category->name}}</option>
                             @endforeach
                         </select>
-                        <label for="floatingSelect">Select Photo Category</label>
+                        <label for="floatingSelect">Select a Category</label>
                     </div>
                     
-                    @error('photo')
+                    @error('thumbnail')
                         <span class="text-danger font-italic">
                             {{$message}}
                         </span>
                     @enderror
                     <div>
-                        <label for="formFileLg" class="form-label">Select your Photo</label>
-                        <input class="form-control form-control-lg" id="formFileLg" type="file" name="photo">
+                        <label for="formFileLg" class="form-label">Thumbnail</label>
+                        <input class="form-control" id="formFileLg" type="file" name="thumbnail">
                     </div>
 
-                    <button type="submit" class="btn btn-primary mt-3">Update</button>
+                    <button type="submit" class="btn btn-primary mt-3">Upload</button>
                 </div>
             </form>
         </div>

@@ -11,7 +11,7 @@
             <form class="col-sm-12 col-xl-10" action="{{route('photo.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="bg-light rounded h-100 p-4">
-                    <h6 class="mb-4">File Upload</h6>
+                    <h6 class="mb-4">Photo Upload</h6>
                     @error('title')
                         <span class="text-danger font-italic">
                             {{$message}}
@@ -45,7 +45,7 @@
                         </span>
                     @enderror
                     <div>
-                        <label for="formFileLg" class="form-label">File input</label>
+                        <label for="formFileLg" class="form-label">Input your Photo</label>
                         <input class="form-control form-control-lg" id="formFileLg" type="file" name="photo">
                     </div>
 

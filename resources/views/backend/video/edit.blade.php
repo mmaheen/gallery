@@ -30,7 +30,7 @@
                         </span>
                     @enderror
                     <div class="mb-3">
-                        <label for="formFileLg" class="form-label">File input</label>
+                        <label for="formFileLg" class="form-label">Select your Video</label>
                         <input class="form-control form-control-lg" id="formFileLg" type="file" name="video">
                     </div>
                     
@@ -47,7 +47,7 @@
                                 <option value="{{$category->id}}" {{$video->category->id == $category->id ? 'selected':''}}>{{$category->name}}</option>
                             @endforeach
                         </select>
-                        <label for="floatingSelect">Category</label>
+                        <label for="floatingSelect">Select Category</label>
                     </div>
                     
                     @error('thumbnail')
@@ -56,7 +56,7 @@
                         </span>
                     @enderror
                     <div>
-                        <label for="formFileLg" class="form-label">File input</label>
+                        <label for="formFileLg" class="form-label">Thumbnail</label>
                         <input class="form-control" id="formFileLg" type="file" name="thumbnail">
                     </div>
 
