@@ -40,7 +40,7 @@
                                         @method('delete')
                                         <button class = "btn btn-danger">Delete</button>
                                     </form>
-                                    <button class = "btn btn-warning">Edit</button>
+                                    <a href="{{route('photo.edit',$photo->id)}}" class = "btn btn-warning">Edit</a>
                                 </div>
                             </td>
                         </tr>

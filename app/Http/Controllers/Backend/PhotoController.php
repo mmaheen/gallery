@@ -81,6 +81,9 @@ class PhotoController extends Controller
     public function edit(string $id)
     {
         //
+        $photo = Photo::find($id);
+        $categories = Category::select('id','name')->get();
+        return view('backend.photo.edit',compact('photo','categories'));
     }
 
     /**
@@ -89,6 +92,11 @@ class PhotoController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $request->validate([
+            'title'=>'required',
+            'category'=>'required',
+            'photo'=>'required',
+        ]);
     }
 
     /**
