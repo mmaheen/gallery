@@ -27,6 +27,9 @@
                 <li class="nav-item">
                     <a class="nav-link nav-link-1 {{Route::currentRouteName()=='home.signup' ? 'active':''}}" href="{{route('home.signup')}}">Sign Up</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-1 {{Route::currentRouteName()=='dashboard.index' ? 'active':''}}" href="{{route('dashboard.index')}}">Dashboard</a>
+                </li>
             </ul>
             </div>
         </div>
