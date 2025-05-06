@@ -18,24 +18,24 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle {{Route::currentRouteName()=='photo.create'?'active':''}}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Upload Item</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{route('photo.create')}}" class="dropdown-item">Photo</a>
-                    <a href="typography.html" class="dropdown-item">Video</a>
+                    <a href="{{route('photo.create')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
+                    <a href="{{route('video.create')}}" class="dropdown-item d-flex justify-content-center">Video</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{route('photo.index')}}" class="dropdown-item">Photo</a>
-                    {{--<a href="{{route('video.index')}}" class="dropdown-item">Video</a>--}}
-                    <a href="{{route('category.index')}}" class="dropdown-item">Category</a>
-                    <a href="{{route('user.index')}}" class="dropdown-item">User</a>
+                    <a href="{{route('photo.index')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
+                    <a href="{{route('video.index')}}" class="dropdown-item d-flex justify-content-center">Video</a>
+                    <a href="{{route('category.index')}}" class="dropdown-item d-flex justify-content-center">Category</a>
+                    <a href="{{route('user.index')}}" class="dropdown-item d-flex justify-content-center">User</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Authentication</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{route('dashboard.signin')}}" class="dropdown-item">Sign In</a>
-                    <a href="{{route('dashboard.signup')}}" class="dropdown-item">Sign Up</a>
+                    <a href="{{route('dashboard.signin')}}" class="dropdown-item d-flex justify-content-center">Sign In</a>
+                    <a href="{{route('dashboard.signup')}}" class="dropdown-item d-flex justify-content-center">Sign Up</a>
                 </div>
             </div>
         </div>
