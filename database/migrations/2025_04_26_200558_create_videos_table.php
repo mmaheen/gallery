@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unSignedBigInteger('category_id');
             $table->unSignedBigInteger('user_id');
             $table->string('video');
-            $table->string('thumbnail');
+            $table->string('thumbnail')->nullable();
             $table->integer('views');
             $table->timestamps();
 
