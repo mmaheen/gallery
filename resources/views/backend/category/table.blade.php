@@ -30,7 +30,12 @@
                             <td>{{$category->created_at}}</td>
                             <td>
                                 <div class="btn-group">
-                                    <button class = "btn btn-danger">Delete</button>
+                                    <form action="{{route('category.destroy',$category->id)}}" method= "POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button class = "btn btn-danger" onclick = "event.preventDefault(); this.closest('form').submit()">Delete</button>
+                                    </form>
+                                    
                                     <button class = "btn btn-warning">Edit</button>
                                 </div>
                             </td>
