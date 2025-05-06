@@ -7,7 +7,11 @@
 @section('content')
     <div class="col-12 mt-4">
         <div class="bg-light rounded h-100 p-4">
-            <h6 class="mb-4">Categories</h6>
+            <div class="d-flex justify-content-between">
+                <h6 class="mb-4">Categories</h6>
+                <a href="{{route('category.create')}}" class = "btn btn-link rounded-pill">Create Category</a>
+            </div>
+            
             <div class="table-responsive">
                 <table class="table">
                     <thead>

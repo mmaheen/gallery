@@ -24,6 +24,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view ('backend.category.create');
     }
 
     /**
@@ -32,6 +33,30 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name'=>'required',
+            'image' => 'required'
+        ]);
+
+        $file_name = null;
+
+        if(isset($request->image)){
+            $file_name = "category_".time().'.'.$request->image->extension();
+            $request->image->move(public_path('uploads/categories'),$file_name);
+        }
+
+        try{
+            $category = new Category;
+            $category->name = $request->name;
+            $category->image = $file_name;
+            $category->user_id = 1;
+            $category->save();
+            return redirect()->route('category.index');
+        }
+        catch(Exception $error){
+            $error->getMessage();
+        }
+        
     }
 
     /**
