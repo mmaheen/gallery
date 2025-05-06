@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
             $table->unSignedBigInteger('user_id'); //For foreign key unsiged ig integer
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->text('title');
             $table->unSignedBigInteger('category_id');
             $table->integer('views');

@@ -63,7 +63,7 @@ class PhotoController extends Controller
             return redirect()->route('index');
         }
         catch(Exception $error){
-            dd($errorr->getMessage());
+            dd($error->getMessage());
         }
     }
 
@@ -92,11 +92,33 @@ class PhotoController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        // return $id;
+        $photo = Photo::find($id);
+        // return $photo;
         $request->validate([
             'title'=>'required',
             'category'=>'required',
             'photo'=>'required',
         ]);
+
+        $photo_name = null;
+        if(isset($request->photo)){
+            $photo_name = time().'_updated'.'.'.$request->photo->extension();
+            $request->photo->move(public_path('uploads/photos'),$photo_name);
+        }
+
+        try{
+            $photo->title = $request->title;
+            $photo->category_id= $request->category;
+            $photo->photo = $photo_name;
+            $photo->update();
+            return redirect()->route('photo.index');
+        }
+        catch(Exception $error){
+            dd($error->getMessage());
+        }
+
+        return $request;
     }
 
     /**
