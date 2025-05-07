@@ -17,6 +17,18 @@ class SiteController extends Controller
         return view ('frontend.index',compact('photos'));
     }
 
+    public function search(Request $request){
+        $search = $request->search;
+        // return $search;
+        
+        $photos = Photo::where('title','like',"%{$search}%")->get();
+        // $photos = Photo::where(function($query) use ($search){
+        //     $query->where('title', 'like' , '%$search%')->get();
+        // });
+
+        return $photos;
+    }
+
     public function videos(){
         $videos = Video::latest()->paginate(16);
         return view ('frontend.videos',compact('videos'));

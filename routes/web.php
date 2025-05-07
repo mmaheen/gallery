@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\DashboardController;
 
 Route::get('/',[SiteController::class,'index'])->name('index');
 Route::get('/videos',[SiteController::class,'videos'])->name('videos');
+Route::get('/search',[SiteController::class,'search'])->name('home.search');
 Route::get('/about',[SiteController::class,'about'])->name('about');
 Route::get('/signin',[SiteController::class,'signin'])->name('home.signin');
 Route::get('/signup',[SiteController::class,'signup'])->name('home.signup');
