@@ -26,7 +26,7 @@ class SiteController extends Controller
 
     public function videos(){
         $videos = Video::latest()->paginate(16);
-        return view ('frontend.videos',compact('videos'));
+        return view ('frontend.video.videos',compact('videos'));
     }
 
     public function about(){
@@ -61,7 +61,7 @@ class SiteController extends Controller
         $photo->views=$photo->views+1;
         $photo->update();
 
-        return view('frontend.show.photo',compact('photo','related_photos','width','height','photo_format','categories'));
+        return view('frontend.photo.photo',compact('photo','related_photos','width','height','photo_format','categories'));
     }
     
     public function downloadPhoto(String $id) {
@@ -73,12 +73,12 @@ class SiteController extends Controller
 
     public function categories(){
         $categories = Category::latest()->with('user')->get();
-        return view ('frontend.show.categories',compact('categories'));
+        return view ('frontend.category.categories',compact('categories'));
     }
 
     public function category_details($id){
         $category = Category::find($id);
-        return view('frontend.show.category',compact('category'));
+        return view('frontend.category.category',compact('category'));
     }
 
     public function video_details($id){
@@ -95,6 +95,6 @@ class SiteController extends Controller
 
         $video->views = $video->views+1;
         $video->update();
-        return view('frontend.show.video', compact('video','related_videos','categories'));
+        return view('frontend.video.video', compact('video','related_videos','categories'));
     }
 }
