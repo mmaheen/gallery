@@ -40,7 +40,7 @@ class PhotoController extends Controller
             [
                 'title'=>'required',
                 'category'=>'required',
-                'photo'=>'required'
+                'photo'=>'required|mimes:jpg,png'
             ],
             [
                 'title.required'=>'Please, add some text'
@@ -100,7 +100,7 @@ class PhotoController extends Controller
         $request->validate([
             'title'=>'required',
             'category'=>'required',
-            'photo'=>'required',
+            'photo'=>'required|mimes:jpg,png',
         ]);
 
         $photo_name = null;
