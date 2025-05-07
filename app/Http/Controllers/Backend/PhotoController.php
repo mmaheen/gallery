@@ -132,6 +132,7 @@ class PhotoController extends Controller
         $photo = Photo::find($id);
         // return $photo;
         $photo->delete();
+        session()->flash('delete','Photo successfully deleted');
         return redirect()->back();
     }
 }
