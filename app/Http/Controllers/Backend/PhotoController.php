@@ -113,6 +113,7 @@ class PhotoController extends Controller
             $photo->category_id= $request->category;
             $photo->photo = $photo_name;
             $photo->update();
+            session()->flash('update','Photo Update success');
             return redirect()->route('photo.index');
         }
         catch(Exception $error){
