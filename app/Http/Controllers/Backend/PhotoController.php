@@ -6,6 +6,7 @@ use App\Models\Photo;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use File;
 
 class PhotoController extends Controller
 {
@@ -131,6 +132,15 @@ class PhotoController extends Controller
         //
         $photo = Photo::find($id);
         // return $photo;
+
+        $file_path=public_path('uploads/photos/').$photo->photo;
+        // return $file_path;
+        if(File::exists($file_path)){
+            File::delete($file_path);
+        }
+        else{
+            session()->flash('no_file','Deleted. No files were here');
+        }
         $photo->delete();
         session()->flash('delete','Photo successfully deleted');
         return redirect()->back();
