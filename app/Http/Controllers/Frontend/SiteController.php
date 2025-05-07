@@ -72,7 +72,7 @@ class SiteController extends Controller
     }
 
     public function categories(){
-        $categories = Category::latest()->get();
+        $categories = Category::latest()->with('user')->get();
         return view ('frontend.show.categories',compact('categories'));
     }
 
