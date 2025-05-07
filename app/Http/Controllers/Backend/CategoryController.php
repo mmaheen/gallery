@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $categories = Category::with('user')->latest()->get();
+        $categories = Category::with('user')->latest()->paginate(10);
         return view('backend.category.table',compact('categories'));
     }
 

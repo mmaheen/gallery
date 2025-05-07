@@ -30,7 +30,7 @@
                     Copyright 2020 Catalog-Z Company. All rights reserved.
                 </div>
                 <div class="col-lg-4 col-md-5 col-12 px-5 text-right">
-                    Designed by <a href="https://templatemo.com" class="tm-text-gray" rel="sponsored" target="_parent">TemplateMo</a>
+                    Designed by <a href="#" class="tm-text-gray" rel="sponsored" target="_parent">MM Mugdha</a>
                 </div>
             </div>
         </div>
