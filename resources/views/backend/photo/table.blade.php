@@ -5,6 +5,11 @@
 @endsection
 
 @section('content')
+    @if(session('create'))
+        <div class="alert alert-primary text-center" role="alert">
+            {{session('create')}}
+        </div>
+    @endif
     <div class="col-12 mt-4">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">Photos</h6>

@@ -59,8 +59,9 @@ class PhotoController extends Controller
             $photo->category_id = $request->category;
             $photo->views = 0;
             $photo->save();
+            session()->flash('create','Photo upload success');
             
-            return redirect()->route('index');
+            return redirect()->route('photo.index');
         }
         catch(Exception $error){
             dd($error->getMessage());
