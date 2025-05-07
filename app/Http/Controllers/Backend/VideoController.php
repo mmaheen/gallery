@@ -38,9 +38,9 @@ class VideoController extends Controller
         $video = new Video;
         $request->validate([
             'title' =>  'required',
-            'video' => 'required',
+            'video' => 'required|mimes:mp4,avi',
             'category'  =>  'required',
-            'thumbnail' => "required"
+            'thumbnail' => "required|mimes:jpg,png"
         ]);
 
         $video_name = null;
@@ -97,9 +97,9 @@ class VideoController extends Controller
         $video = Video::find($id);
         $request->validate([
             'title' =>  'required',
-            'video' => 'required',
+            'video' => 'required|mimes:mp4,avi',
             'category'  =>  'required',
-            'thumbnail' => "required"
+            'thumbnail' => 'required|mimes:jpg,png'
         ]);
 
         $video_name = null;
