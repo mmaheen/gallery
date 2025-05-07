@@ -19,14 +19,9 @@ class SiteController extends Controller
 
     public function search(Request $request){
         $search = $request->search;
-        // return $search;
-        
-        $photos = Photo::where('title','like',"%{$search}%")->get();
-        // $photos = Photo::where(function($query) use ($search){
-        //     $query->where('title', 'like' , '%$search%')->get();
-        // });
+        $results = Photo::where('title','like',"%{$search}%")->get();
 
-        return $photos;
+        return view('frontend.search',compact('search','results'));
     }
 
     public function videos(){
