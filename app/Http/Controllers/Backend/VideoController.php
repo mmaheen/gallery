@@ -63,7 +63,8 @@ class VideoController extends Controller
         $video->user_id = rand(1,10);
         $video->views = 0;
         $video->save();
-        return redirect()->back();
+        session()->flash('create', 'Video successfully created');
+        return redirect()->route('video.index');
 
     }
 
@@ -119,6 +120,7 @@ class VideoController extends Controller
         $video->video = $video_name;
         $video->thumbnail = $thumbnail_name;
         $video->update();
+        session()->flash('update','Video updated');
         return redirect()->route('video.index');
     }
 
@@ -131,6 +133,7 @@ class VideoController extends Controller
         // return $id;
         $video = Video::find($id);
         $video->delete();
+        session()->flash('delete','Video successfully deleted');
         return redirect()->back();
     }
 }
