@@ -6,6 +6,7 @@ use App\Models\Video;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class VideoController extends Controller
 {
@@ -60,7 +61,7 @@ class VideoController extends Controller
         $video->category_id = $request->category;
         $video->video = $video_name;
         $video->thumbnail = $thumbnail_name;
-        $video->user_id = rand(1,10);
+        $video->user_id = Auth::user()->id;
         $video->views = 0;
         $video->save();
         session()->flash('create', 'Video successfully created');

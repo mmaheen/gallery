@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
+use File;
 use App\Models\Photo;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use File;
+use Illuminate\Support\Facades\Auth;
 
 class PhotoController extends Controller
 {
@@ -56,7 +57,7 @@ class PhotoController extends Controller
             $photo = new Photo;
             $photo->title = $request->title;
             $photo->photo = $photo_name;
-            $photo->user_id = 1;
+            $photo->user_id = Auth::user()->id;
             $photo->category_id = $request->category;
             $photo->views = 0;
             $photo->save();
