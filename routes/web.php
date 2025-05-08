@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard.index');
     Route::get('/dashboard/sign-in',[DashboardController::class,'signin'])->name('dashboard.signin');
     Route::get('/dashboard/sign-up',[DashboardController::class,'signup'])->name('dashboard.signup');
+    Route::post('/dashboard/sign-up',[DashboardController::class,'adminRegister'])->name('admin.register');
     // End Dashboard 
 });
 

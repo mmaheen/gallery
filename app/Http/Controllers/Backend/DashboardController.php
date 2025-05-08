@@ -31,6 +31,23 @@ class DashboardController extends Controller
         return view('backend.signin');
     }
 
+    public function adminRegister(Request $request){
+        // return $request;
+        $photo_name = null;
+        if(isset($request->photo)){
+            $photo_name='User_'.time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('uploads/users'),$photo_name);
+        }
+        $user = new User;
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->password=$request->password;
+        $user->photo = $photo_name;
+        $user->role = $request->role;
+        $user->save();
+        return redirect()->route('dashboard.index');
+    }
+
     public function signup(){
         return view('backend.signup');
     }

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('frontend.layouts.layout')
 
 @section('content')
 <div class="container">
@@ -51,17 +51,6 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <input class="" type="radio" name="role" value="admin" {{ old('status')==='admin' ? 'checked':''}}>
-                            <label for="flexRadioDefault1">
-                                Admin
-                            </label>
-                            <input class="" id = "flexRadioDefault2" type="radio" name="role" value="guest" {{ old('status')==='guest' ? 'checked':''}}>
-                            <label for="flexRadioDefault2">
-                                Guest
-                            </label>
                         </div>
 
                         <div class="row mb-3">
