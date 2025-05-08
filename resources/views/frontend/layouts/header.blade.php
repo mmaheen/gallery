@@ -23,10 +23,10 @@
                 </li>
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link nav-link-2 {{Route::currentRouteName()=='home.signin' ? 'active':''}}" href="{{route('home.signin')}}">Sign In</a>
+                        <a class="nav-link nav-link-2 {{Route::currentRouteName()=='login' ? 'active':''}}" href="{{route('login')}}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-1 {{Route::currentRouteName()=='home.signup' ? 'active':''}}" href="{{route('home.signup')}}">Sign Up</a>
+                        <a class="nav-link nav-link-1 {{Route::currentRouteName()=='register' ? 'active':''}}" href="{{route('register')}}">Register</a>
                     </li>
 
                 @else
