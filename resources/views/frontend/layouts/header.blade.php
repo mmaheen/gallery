@@ -28,10 +28,12 @@
                     <li class="nav-item">
                         <a class="nav-link nav-link-1 {{Route::currentRouteName()=='home.signup' ? 'active':''}}" href="{{route('home.signup')}}">Sign Up</a>
                     </li>
+
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-2" href="{{Auth::user()->role === 'admin' ? route('dashboard.index'):''}}">{{Auth::user()->name}}</a>
+                    </li>
                 @endguest
-                <li class="nav-item">
-                    <a class="nav-link nav-link-1 {{Route::currentRouteName()=='dashboard.index' ? 'active':''}}" href="{{route('dashboard.index')}}">Dashboard</a>
-                </li>
             </ul>
             </div>
         </div>
