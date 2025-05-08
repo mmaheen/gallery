@@ -54,6 +54,17 @@
                         </div>
 
                         <div class="row mb-3">
+                            <input class="" type="radio" name="role" value="admin" {{ old('status')==='admin' ? 'checked':''}}>
+                            <label for="flexRadioDefault1">
+                                Admin
+                            </label>
+                            <input class="" id = "flexRadioDefault2" type="radio" name="role" value="guest" {{ old('status')==='guest' ? 'checked':''}}>
+                            <label for="flexRadioDefault2">
+                                Guest
+                            </label>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
