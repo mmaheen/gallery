@@ -27,10 +27,6 @@ class DashboardController extends Controller
         return view('backend.dashboard',compact('photo_count','user_count','video_count','category_count'));
     }
 
-    public function table(){
-        return view('backend.table');
-    }
-
     public function signin(){
         return view('backend.signin');
     }
