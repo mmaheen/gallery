@@ -36,7 +36,6 @@ Route::get('/search/video',[SiteController::class,'searchVideo'])->name('video.s
 Route::middleware(['auth'])->group(function(){
     // Dashboard 
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard.index');
-    Route::get('/dashboard/sign-in',[DashboardController::class,'signin'])->name('dashboard.signin');
     Route::get('/dashboard/sign-up',[DashboardController::class,'signup'])->name('dashboard.signup');
     Route::post('/dashboard/sign-up',[DashboardController::class,'adminRegister'])->name('admin.register');
     // End Dashboard 

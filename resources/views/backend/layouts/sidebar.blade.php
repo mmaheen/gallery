@@ -34,7 +34,6 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Authentication</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{route('dashboard.signin')}}" class="dropdown-item d-flex justify-content-center">Sign In</a>
                     <a href="{{route('dashboard.signup')}}" class="dropdown-item d-flex justify-content-center">Sign Up</a>
                 </div>
             </div>
