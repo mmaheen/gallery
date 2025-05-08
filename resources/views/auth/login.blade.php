@@ -17,13 +17,19 @@
                     </div>
                     <form action="{{ route('login') }}" method="POST">
                         @csrf
+                        @error('email')
+                            <span class="text-danger" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                             <label for="floatingInput">Email address</label>
                         </div>
 
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
+                        @error('password')
+                            <span class="text-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -32,12 +38,6 @@
                             <input type="password" class="form-control" id="password" placeholder="Password" name="password" required autocomplete="current-password">
                             <label for="floatingPassword">Password</label>
                         </div>
-
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
 
                         <div class="d-flex align-items-center justify-content-between mb-4">
                             <div class="form-check">
