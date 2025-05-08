@@ -81,8 +81,6 @@
                         </div>
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
                     </form>
-                    
-                    <p class="text-center mb-0">Already have an Account? <a href="{{route('dashboard.signin')}}">Sign In</a></p>
                 </div>
             </div>
         </div>
