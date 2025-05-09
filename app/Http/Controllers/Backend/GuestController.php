@@ -23,7 +23,7 @@ class GuestController extends Controller
 
     public function videoIndex(){
         $user = auth()->user()->id;
-        $videos = Video::where('user_id',$user)->paginate(10);
+        $videos = Video::where('user_id',$user)->with('category')->paginate(10);
         // return $photo;
         return view ('backend.guest.video.table',compact('videos'));
     }
