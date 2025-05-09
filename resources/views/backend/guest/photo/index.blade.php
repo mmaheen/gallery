@@ -1,6 +1,7 @@
 @extends('backend.layouts.layout')
 
 @section('title')
+    Photo - {{Auth::user()->name}}
 @endsection
 
 @section('content')
