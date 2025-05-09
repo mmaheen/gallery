@@ -17,7 +17,7 @@ class VideoController extends Controller
     {
         //
         $videos = Video::with('category','user')->latest()->paginate(10);
-        return view('backend.video.table',compact('videos'));
+        return view('backend.admin.video.table',compact('videos'));
     }
 
     /**
@@ -27,7 +27,7 @@ class VideoController extends Controller
     {
         //
         $categories = Category::select('id','name')->get();
-        return view('backend.video.create',compact('categories'));
+        return view('backend.admin.video.create',compact('categories'));
     }
 
     /**
@@ -86,7 +86,7 @@ class VideoController extends Controller
         // return $id;
         $video = Video::find($id);
         $categories = Category::select('id','name')->get();
-        return view('backend.video.edit',compact('video','categories'));
+        return view('backend.admin.video.edit',compact('video','categories'));
     }
 
     /**

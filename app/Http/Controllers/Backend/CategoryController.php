@@ -16,7 +16,7 @@ class CategoryController extends Controller
     {
         //
         $categories = Category::with('user')->latest()->paginate(10);
-        return view('backend.category.table',compact('categories'));
+        return view('backend.admin.category.table',compact('categories'));
     }
 
     /**
@@ -25,7 +25,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view ('backend.category.create');
+        return view ('backend.admin.category.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class CategoryController extends Controller
     {
         //
         // return $category;
-        return view('backend.category.edit',compact('category'));
+        return view('backend.admin.category.edit',compact('category'));
     }
 
     /**

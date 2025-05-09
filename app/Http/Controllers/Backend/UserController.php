@@ -15,7 +15,7 @@ class UserController extends Controller
     {
         //
         $users = User::latest()->get();
-        return view ('backend.user.table',compact('users'));
+        return view ('backend.admin.user.table',compact('users'));
     }
 
     /**

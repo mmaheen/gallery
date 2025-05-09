@@ -6,7 +6,7 @@ use App\Http\Controllers\Backend\PhotoController;
 use App\Http\Controllers\Backend\VideoController;
 use App\Http\Controllers\Frontend\SiteController;
 use App\Http\Controllers\Backend\CategoryController;
-use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\AdminController;
 
 // Index 
 Route::get('/about',[SiteController::class,'about'])->name('about');
@@ -35,9 +35,11 @@ Route::get('/search/video',[SiteController::class,'searchVideo'])->name('video.s
 
 Route::middleware(['auth'])->group(function(){
     // Dashboard 
-    Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard.index');
-    Route::get('/dashboard/sign-up',[DashboardController::class,'signup'])->name('dashboard.signup');
-    Route::post('/dashboard/sign-up',[DashboardController::class,'adminRegister'])->name('admin.register');
+    Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard.index');
+    Route::get('/dashboard/sign-up',[AdminController::class,'signup'])->name('dashboard.signup');
+    Route::post('/dashboard/sign-up',[AdminController::class,'adminRegister'])->name('admin.register');
+    Route::get('/dashboard/settings',[AdminController::class,'settings'])->name('dashboard.settings');
+    Route::get('/dashboard/profile',[AdminController::class,'profile'])->name('dashboard.profile');
     // End Dashboard 
 });
 

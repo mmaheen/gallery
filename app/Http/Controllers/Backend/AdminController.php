@@ -9,7 +9,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class DashboardController extends Controller
+class AdminController extends Controller
 {
     //
     public function index(){
@@ -24,11 +24,7 @@ class DashboardController extends Controller
 
         $category = Category::select('id')->get();
         $category_count = count($category);
-        return view('backend.dashboard',compact('photo_count','user_count','video_count','category_count'));
-    }
-
-    public function signin(){
-        return view('backend.signin');
+        return view('backend.admin.dashboard',compact('photo_count','user_count','video_count','category_count'));
     }
 
     public function adminRegister(Request $request){
@@ -48,7 +44,15 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.index');
     }
 
+    public function settings(){
+        return view('backend.admin.settings');
+    }
+
+    public function profile(){
+        return view('backend.admin.profile');
+    }
+
     public function signup(){
-        return view('backend.signup');
+        return view('backend.admin.signup');
     }
 }

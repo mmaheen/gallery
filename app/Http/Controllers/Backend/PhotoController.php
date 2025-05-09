@@ -18,7 +18,7 @@ class PhotoController extends Controller
     {
         //
         $photos = Photo::with('category','user')->latest()->paginate(10);
-        return view('backend.photo.table',compact('photos'));
+        return view('backend.admin.photo.table',compact('photos'));
     }
 
     /**
@@ -28,7 +28,7 @@ class PhotoController extends Controller
     {
         //
         $categories = Category::select('id','name')->get();
-        return view('backend.photo.create',compact('categories'));
+        return view('backend.admin.photo.create',compact('categories'));
     }
 
     /**
@@ -86,7 +86,7 @@ class PhotoController extends Controller
         //
         $photo = Photo::find($id);
         $categories = Category::select('id','name')->get();
-        return view('backend.photo.edit',compact('photo','categories'));
+        return view('backend.admin.photo.edit',compact('photo','categories'));
     }
 
     /**
