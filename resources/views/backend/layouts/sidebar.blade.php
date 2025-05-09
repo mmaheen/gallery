@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="navbar-nav w-100">
-            <a href="{{route('dashboard.index')}}" class="nav-item nav-link {{Route::currentRouteName()=='dashboard.index' ? 'active':''}}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <a href="{{Auth::user()->role === 'admin' ? route('dashboard.index') : route('dashboard.guest.index')}}" class="nav-item nav-link {{Route::currentRouteName()=='dashboard.index' ? 'active':''}}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle {{Route::currentRouteName()=='photo.create'?'active':''}}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Upload Item</a>
                 <div class="dropdown-menu bg-transparent border-0">
@@ -25,10 +25,10 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{route('photo.index')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
-                    <a href="{{route('video.index')}}" class="dropdown-item d-flex justify-content-center">Video</a>
-                    <a href="{{route('category.index')}}" class="dropdown-item d-flex justify-content-center">Category</a>
-                    <a href="{{route('user.index')}}" class="dropdown-item d-flex justify-content-center">User</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('photo.index') :route('dashboard.guest.photo.index')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('video.index') :''}}" class="dropdown-item d-flex justify-content-center">Video</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('category.index') :''}}" class="dropdown-item d-flex justify-content-center">Category</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('user.index') :''}}" class="dropdown-item d-flex justify-content-center">User</a>
                 </div>
             </div>
             <div class="nav-item dropdown">

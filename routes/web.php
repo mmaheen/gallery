@@ -44,7 +44,9 @@ Route::middleware(['auth'])->group(function(){
     // End Dashboard 
 });
 
+//Backend guest
 Route::get('/dashboard/guest',[GuestController::class,'index'])->name('dashboard.guest.index');
+Route::get('/dashboard/guest/photo',[GuestController::class,'photoIndex'])->name('dashboard.guest.photo.index');
 
 Route::resources([
     'photo'=>PhotoController::class,
