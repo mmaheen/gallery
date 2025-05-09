@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'password' => '12345678',
+            'password' => '1',
             'role' => 'admin',
             'photo' => 'people-4.jpg'
         ]);
@@ -48,7 +48,7 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'User',
             'email' => 'user@gmail.com',
-            'password' => '12345678',
+            'password' => '1',
             'role' => 'guest',
             'photo' => 'people-4.jpg'
         ]);
