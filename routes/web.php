@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\GuestController;
 use App\Http\Controllers\Backend\PhotoController;
 use App\Http\Controllers\Backend\VideoController;
 use App\Http\Controllers\Frontend\SiteController;
 use App\Http\Controllers\Backend\CategoryController;
-use App\Http\Controllers\Backend\AdminController;
 
 // Index 
 Route::get('/about',[SiteController::class,'about'])->name('about');
@@ -35,13 +36,15 @@ Route::get('/search/video',[SiteController::class,'searchVideo'])->name('video.s
 
 Route::middleware(['auth'])->group(function(){
     // Dashboard 
-    Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard.index');
-    Route::get('/dashboard/sign-up',[AdminController::class,'signup'])->name('dashboard.signup');
-    Route::post('/dashboard/sign-up',[AdminController::class,'adminRegister'])->name('admin.register');
-    Route::get('/dashboard/settings',[AdminController::class,'settings'])->name('dashboard.settings');
-    Route::get('/dashboard/profile',[AdminController::class,'profile'])->name('dashboard.profile');
+    Route::get('/dashboard/admin',[AdminController::class,'index'])->name('dashboard.index');
+    Route::get('/dashboard/admin/sign-up',[AdminController::class,'signup'])->name('dashboard.signup');
+    Route::post('/dashboard/admin/sign-up',[AdminController::class,'adminRegister'])->name('admin.register');
+    Route::get('/dashboard/admin/settings',[AdminController::class,'settings'])->name('dashboard.settings');
+    Route::get('/dashboard/admin/profile',[AdminController::class,'profile'])->name('dashboard.profile');
     // End Dashboard 
 });
+
+Route::get('/dashboard/guest',[GuestController::class,'index'])->name('dashboard.guest.index');
 
 Route::resources([
     'photo'=>PhotoController::class,
