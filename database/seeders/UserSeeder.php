@@ -44,5 +44,13 @@ class UserSeeder extends Seeder
             'role' => 'admin',
             'photo' => 'people-4.jpg'
         ]);
+
+        User::factory()->create([
+            'name' => 'User',
+            'email' => 'user@gmail.com',
+            'password' => '12345678',
+            'role' => 'guest',
+            'photo' => 'people-4.jpg'
+        ]);
     }
 }

@@ -15,6 +15,15 @@ class GuestMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if(auth()->check())
+        {
+            if(auth()->user()->role=='admin'){
+                return $next($request);
+            }
+            else{
+                return to_route('dashboard.guest.index');
+            }
+        }
+        
     }
 }
