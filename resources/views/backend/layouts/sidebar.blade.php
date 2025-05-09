@@ -26,7 +26,7 @@
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{Auth::user()->role === 'admin' ? route('photo.index') :route('dashboard.guest.photo.index')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
-                    <a href="{{Auth::user()->role === 'admin' ? route('video.index') :''}}" class="dropdown-item d-flex justify-content-center">Video</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('video.index') : route('dashboard.guest.video.index')}}" class="dropdown-item d-flex justify-content-center">Video</a>
                     <a href="{{Auth::user()->role === 'admin' ? route('category.index') :''}}" class="dropdown-item d-flex justify-content-center">Category</a>
                     <a href="{{Auth::user()->role === 'admin' ? route('user.index') :''}}" class="dropdown-item d-flex justify-content-center">User</a>
                 </div>

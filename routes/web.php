@@ -47,6 +47,7 @@ Route::middleware(['auth'])->group(function(){
 //Backend guest
 Route::get('/dashboard/guest',[GuestController::class,'index'])->name('dashboard.guest.index');
 Route::get('/dashboard/guest/photo',[GuestController::class,'photoIndex'])->name('dashboard.guest.photo.index');
+Route::get('/dashboard/guest/video',[GuestController::class,'videoIndex'])->name('dashboard.guest.video.index');
 
 Route::resources([
     'photo'=>PhotoController::class,
