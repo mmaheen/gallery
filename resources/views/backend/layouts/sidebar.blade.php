@@ -28,15 +28,19 @@
                     <a href="{{Auth::user()->role === 'admin' ? route('photo.index') :route('dashboard.guest.photo.index')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
                     <a href="{{Auth::user()->role === 'admin' ? route('video.index') : route('dashboard.guest.video.index')}}" class="dropdown-item d-flex justify-content-center">Video</a>
                     <a href="{{Auth::user()->role === 'admin' ? route('category.index') :''}}" class="dropdown-item d-flex justify-content-center">Category</a>
-                    <a href="{{Auth::user()->role === 'admin' ? route('user.index') :''}}" class="dropdown-item d-flex justify-content-center">User</a>
+                    @if(Auth::user()->role == 'admin')
+                        <a href="{{Auth::user()->role === 'admin' ? route('user.index') :''}}" class="dropdown-item d-flex justify-content-center">User</a>
+                    @endif
                 </div>
             </div>
+            @if(Auth::user()->role == 'admin')
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Authentication</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{route('dashboard.signup')}}" class="dropdown-item d-flex justify-content-center">Sign Up</a>
                 </div>
             </div>
+            @endif
         </div>
     </nav>
 </div>
