@@ -35,10 +35,6 @@ class SiteController extends Controller
         return view ('frontend.video.videos',compact('videos'));
     }
 
-    public function about(){
-        return view('frontend.about');
-    }
-
     public function photo_details($id){
         $photo = Photo::find($id);
         $filePath = public_path('uploads/photos/'.$photo->photo);

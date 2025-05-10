@@ -18,9 +18,6 @@
                 <li class="nav-item">
                     <a class="nav-link nav-link-3 {{Route::currentRouteName()=='categories' ? 'active':''}}" href="{{route('categories')}}">Categories</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-4 {{Route::currentRouteName()=='about' ? 'active':''}}" href="{{route('about')}}">About</a>
-                </li>
                 @guest
                     <li class="nav-item">
                         <a class="nav-link nav-link-2 {{Route::currentRouteName()=='login' ? 'active':''}}" href="{{route('login')}}">Login</a>

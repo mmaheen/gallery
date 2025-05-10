@@ -11,7 +11,7 @@ use App\Http\Controllers\Frontend\SiteController;
 use App\Http\Controllers\Backend\CategoryController;
 
 // Index 
-Route::get('/about',[SiteController::class,'about'])->name('about');
+
 // End index 
 
 // Photo
