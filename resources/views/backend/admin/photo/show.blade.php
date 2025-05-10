@@ -11,6 +11,9 @@
             <h6 class="card-title text-secondary">Category: {{$photo->category->name}}</h6>
             <p class="card-text">Uploader: {{$photo->user->name}}</p>
             <p class="card-text"><small>At: {{date('F j, Y', strtotime($photo->created_at))}}</small></p>
+            @if(isset($photo->updated_at))
+                <p class="card-text"><small>Updated At: {{date('F j, Y', strtotime($photo->updated_at))}}</small></p>
+            @endif
         </div>
     </div>
 @endsection
