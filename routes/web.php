@@ -41,6 +41,8 @@ Route::middleware(['auth',CheckAdmin::class])->group(function(){
     Route::get('/dashboard/admin/settings',[AdminController::class,'settings'])->name('admin.settings');
     Route::get('/dashboard/admin/profile',[AdminController::class,'profile'])->name('admin.profile');
     Route::get('/dashboard/admin/photos',[AdminController::class,'photos'])->name('admin.photos');
+    Route::get('/dashboard/admin/videos',[AdminController::class,'videos'])->name('admin.videos');
+    Route::get('/dashboard/admin/categories',[AdminController::class,'categories'])->name('admin.categories');
     // End Dashboard 
 });
 

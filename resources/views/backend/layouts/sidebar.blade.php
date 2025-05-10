@@ -24,12 +24,12 @@
             </div>
             <div class="nav-item dropdown">
                 <a href="#" 
-                class="nav-link dropdown-toggle {{Route::currentRouteName()=='admin.photos' || Route::currentRouteName()=='guest.photos' || Route::currentRouteName()=='video.index' || Route::currentRouteName()=='guest.videos' || Route::currentRouteName()=='category.index' || Route::currentRouteName()=='guest.categories' || Route::currentRouteName()=='user.index' ? 'active':''}}" 
+                class="nav-link dropdown-toggle {{Route::currentRouteName()=='admin.photos' || Route::currentRouteName()=='guest.photos' || Route::currentRouteName()=='admin.videos' || Route::currentRouteName()=='guest.videos' || Route::currentRouteName()=='admin.categories' || Route::currentRouteName()=='guest.categories' || Route::currentRouteName()=='user.index' ? 'active':''}}" 
                 data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{Auth::user()->role === 'admin' ? route('admin.photos') :route('guest.photos')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
-                    <a href="{{Auth::user()->role === 'admin' ? route('video.index') : route('guest.videos')}}" class="dropdown-item d-flex justify-content-center">Video</a>
-                    <a href="{{Auth::user()->role === 'admin' ? route('category.index') : route('guest.categories')}}" class="dropdown-item d-flex justify-content-center">Category</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('admin.videos') : route('guest.videos')}}" class="dropdown-item d-flex justify-content-center">Video</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('admin.categories') : route('guest.categories')}}" class="dropdown-item d-flex justify-content-center">Category</a>
                     @if(Auth::user()->role == 'admin')
                         <a href="{{route('user.index')}}" class="dropdown-item d-flex justify-content-center">User</a>
                     @endif

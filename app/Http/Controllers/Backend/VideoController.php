@@ -16,8 +16,6 @@ class VideoController extends Controller
     public function index()
     {
         //
-        $videos = Video::with('category','user')->latest()->paginate(10);
-        return view('backend.admin.video.table',compact('videos'));
     }
 
     /**

@@ -49,6 +49,16 @@ class AdminController extends Controller
         return view('backend.admin.photo.table',compact('photos'));
     }
 
+    public function videos(){
+        $videos = Video::with('category','user')->latest()->paginate(10);
+        return view('backend.admin.video.table',compact('videos'));
+    }
+
+    public function categories(){
+        $categories = Category::with('user')->latest()->paginate(10);
+        return view('backend.admin.category.table',compact('categories'));
+    }
+
     public function settings(){
         return view('backend.admin.settings');
     }
