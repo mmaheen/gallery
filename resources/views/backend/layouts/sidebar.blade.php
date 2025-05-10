@@ -31,7 +31,7 @@
                     <a href="{{Auth::user()->role === 'admin' ? route('video.index') : route('dashboard.guest.video.index')}}" class="dropdown-item d-flex justify-content-center">Video</a>
                     <a href="{{Auth::user()->role === 'admin' ? route('category.index') :''}}" class="dropdown-item d-flex justify-content-center">Category</a>
                     @if(Auth::user()->role == 'admin')
-                        <a href="{{Auth::user()->role === 'admin' ? route('user.index') :''}}" class="dropdown-item d-flex justify-content-center">User</a>
+                        <a href="{{route('user.index')}}" class="dropdown-item d-flex justify-content-center">User</a>
                     @endif
                 </div>
             </div>
