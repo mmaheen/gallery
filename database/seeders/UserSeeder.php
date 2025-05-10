@@ -16,6 +16,22 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         //
+        User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => '1',
+            'role' => 'admin',
+            'photo' => 'people-4.jpg'
+        ]);
+
+        User::factory()->create([
+            'name' => 'User',
+            'email' => 'user@gmail.com',
+            'password' => '1',
+            'role' => 'guest',
+            'photo' => 'people-4.jpg'
+        ]);
+
         $faker = Factory::create();
         
         $source_path = public_path('assets/frontend/img');
@@ -36,21 +52,5 @@ class UserSeeder extends Seeder
                 'photo'=>$photo_name
             ]);
         }
-
-        User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'password' => '1',
-            'role' => 'admin',
-            'photo' => 'people-4.jpg'
-        ]);
-
-        User::factory()->create([
-            'name' => 'User',
-            'email' => 'user@gmail.com',
-            'password' => '1',
-            'role' => 'guest',
-            'photo' => 'people-4.jpg'
-        ]);
     }
 }

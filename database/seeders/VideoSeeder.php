@@ -26,7 +26,7 @@ class VideoSeeder extends Seeder
         File::cleanDirectory($video_destination_path);
         File::copyDirectory($video_sourece_path,$video_destination_path);
 
-        $file_count=count(File::files($video_destination_path));
+        // $file_count=count(File::files($video_destination_path));
 
         $thumbnail_source_path = public_path('assets/frontend/img');
         $thumbnail_destination_path = public_path('uploads/videos/thumbnails');
@@ -34,7 +34,7 @@ class VideoSeeder extends Seeder
         File::cleanDirectory($thumbnail_destination_path);
         File::copyDirectory($thumbnail_source_path,$thumbnail_destination_path);
 
-        foreach(range(1,$file_count*10) as $index){
+        foreach(range(1,300) as $index){
             $videos=File::files($video_destination_path);
             $random_videos=$videos[array_rand($videos)];
             $video_name= $random_videos->getFileName();

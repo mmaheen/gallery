@@ -70,7 +70,7 @@ class SiteController extends Controller
     }
 
     public function categories(){
-        $categories = Category::latest()->with('user')->get();
+        $categories = Category::latest()->with('user')->paginate(16);
         return view ('frontend.category.categories',compact('categories'));
     }
 

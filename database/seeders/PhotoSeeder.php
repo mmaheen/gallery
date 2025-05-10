@@ -26,9 +26,9 @@ class PhotoSeeder extends Seeder
         File::cleanDirectory($destinationPath); //delete all previous files
         File::copyDirectory($sourcePath, $destinationPath);
 
-        $file_count = count(File::files($destinationPath));
+        // $file_count = count(File::files($destinationPath));
 
-        foreach(range(1,$file_count*10) as $index){
+        foreach(range(1,400) as $index){
             $randomUserId = User::inRandomOrder()->first()->id;
             $randomCategoryId = Category::inRandomOrder()->first()->id;
             

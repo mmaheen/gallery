@@ -38,9 +38,9 @@
             @endforeach
         </div> <!-- row -->
         
-        {{--<div>
-            {{$photos->links()}}
-        </div>--}}
+        <div>
+            {{$categories->links()}}
+        </div>
         {{--<div class="row tm-mb-90">
             <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
                 <a href="javascript:void(0);" class="btn btn-primary tm-btn-prev mb-2 disabled">Previous</a>
