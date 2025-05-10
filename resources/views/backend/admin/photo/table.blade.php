@@ -48,14 +48,13 @@
                             <td>{{$photo->views}}</td>
                             <td>{{$photo->created_at}}</td>
                             <td>
-                                <div class="btn-group">
-                                    
+                                <div class="btn-group">      
                                     <form action="{{route('photo.destroy',$photo->id)}}" method = "POST">
                                         @csrf
                                         @method('delete')
                                         <button class = "btn btn-danger" onclick="event.preventDefault(); this.closest('form').submit()">Delete</button>
                                     </form>
-                                    <a href="{{route('photo.edit',$photo->id)}}" class = "btn btn-warning">Edit</a>
+                                    <a href="{{route('photo.show',$photo->id)}}" class = "btn btn-info">Show</a>
                                 </div>
                             </td>
                         </tr>

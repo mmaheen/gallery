@@ -80,6 +80,9 @@ class PhotoController extends Controller
     public function show(string $id)
     {
         //
+        // return $id;
+        $photo = Photo::find($id);
+        return view('backend.admin.photo.show',compact('photo'));
     }
 
     /**
