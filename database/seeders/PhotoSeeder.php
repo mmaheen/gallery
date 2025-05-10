@@ -43,7 +43,8 @@ class PhotoSeeder extends Seeder
                     'title'=>$faker->sentence(5),
                     'category_id'=>$randomCategoryId,
                     'views'=>rand(1,100000),
-                    'created_at' => $faker->dateTime()
+                    'created_at' => $faker->dateTime(),
+                    'updated_at'=> $faker->dateTime()
                 ]
             );
         }

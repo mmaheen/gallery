@@ -40,16 +40,23 @@ class UserSeeder extends Seeder
         File::cleanDirectory($destination_path);
         File::copyDirectory($source_path,$destination_path);
 
+        $role = ["admin","guest"];
+
         foreach(range(1,20) as $index){
             $photos = File::files($destination_path);
             $random_photo = $photos[array_rand($photos)];
             $photo_name = $random_photo->getFilename();
 
+            $random_role = $role[array_rand($role)];
+
             User::create([
                 'name' => $faker->name,
                 'email' => $faker->email,
-                'password' => rand(1,83748372387442),
-                'photo'=>$photo_name
+                'password' => $faker->password,
+                'role' => $random_role,
+                'photo'=>$photo_name,
+                'created_at'=> $faker->dateTime(),
+                'updated_at'=> $faker->dateTime()
             ]);
         }
     }

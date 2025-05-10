@@ -53,7 +53,8 @@ class VideoSeeder extends Seeder
                 'video'=>$video_name,
                 'thumbnail' => $thumbnail_name,
                 'views' =>rand(1,300000),
-                'created_at'=>$faker->dateTime()
+                'created_at'=>$faker->dateTime(),
+                'updated_at'=> $faker->dateTime()
             ]);
         }
     }

@@ -13,6 +13,7 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">photo</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Role</th>
@@ -23,9 +24,10 @@
                         @foreach($users as $user)
                         <tr>
                             <th scope="row">{{$user->id}}</th>
+                            <th><img src="{{asset('uploads/users')}}/{{$user->photo}}" height ="25" width = "25" class = "rounded-circle" alt=""></th>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
-                            <td>Admin</td>
+                            <td>{{Str::title($user->role)}}</td>
                             <td>{{$user->created_at}}</td>
                         </tr>
                         @endforeach

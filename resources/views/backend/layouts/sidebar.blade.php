@@ -10,7 +10,7 @@
             </div>
             <div class="ms-3">
                 <h6 class="mb-0">{{Auth::user()->name}}</h6>
-                <span>{{Auth::user()->role}}</span>
+                <span>{{ucfirst(Auth::user()->role)}}</span>
             </div>
         </div>
         <div class="navbar-nav w-100">
