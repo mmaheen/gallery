@@ -11,8 +11,6 @@ use App\Http\Controllers\Backend\CategoryController;
 
 // Index 
 Route::get('/about',[SiteController::class,'about'])->name('about');
-Route::get('/signin',[SiteController::class,'signin'])->name('home.signin');
-Route::get('/signup',[SiteController::class,'signup'])->name('home.signup');
 // End index 
 
 // Photo
