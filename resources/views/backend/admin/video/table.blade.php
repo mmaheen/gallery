@@ -50,12 +50,12 @@
                             <td>
                                 <div class="btn-group">
                                     
-                                    <form action="{{route('video.destroy',$video->id)}}" method = "POST">
+                                    <form action="{{route('admin.video.destroy',$video->id)}}" method = "POST">
                                         @csrf
                                         @method('delete')
                                         <button class = "btn btn-danger" onclick="event.preventDefault(); this.closest('form').submit()">Delete</button>
                                     </form>
-                                    <a href="{{route('video.edit',$video->id)}}" class = "btn btn-warning">Edit</a>
+                                    <a href="{{route('admin.video.edit',$video->id)}}" class = "btn btn-warning">Edit</a>
                                 </div>
                             </td>
                         </tr>

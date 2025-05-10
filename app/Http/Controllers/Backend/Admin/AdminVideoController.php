@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
 
 use App\Models\Video;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
-class VideoController extends Controller
+class AdminVideoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +15,8 @@ class VideoController extends Controller
     public function index()
     {
         //
+        $videos = Video::with('category','user')->latest()->paginate(10);
+        return view('backend.admin.video.table',compact('videos'));
     }
 
     /**
@@ -64,7 +65,6 @@ class VideoController extends Controller
         $video->save();
         session()->flash('create', 'Video successfully created');
         return redirect()->route('video.index');
-
     }
 
     /**
@@ -81,7 +81,6 @@ class VideoController extends Controller
     public function edit(string $id)
     {
         //
-        // return $id;
         $video = Video::find($id);
         $categories = Category::select('id','name')->get();
         return view('backend.admin.video.edit',compact('video','categories'));
@@ -129,7 +128,6 @@ class VideoController extends Controller
     public function destroy(string $id)
     {
         //
-        // return $id;
         $video = Video::find($id);
         $video->delete();
         session()->flash('delete','Video successfully deleted');

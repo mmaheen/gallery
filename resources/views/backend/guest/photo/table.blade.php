@@ -54,9 +54,9 @@
                                     <form action="{{route('photo.destroy',$photo->id)}}" method = "POST">
                                         @csrf
                                         @method('delete')
-                                        <button class = "btn btn-danger" onclick="event.preventDefault(); this.closest('form').submit()">Delete</button>
+                                        <button class = "btn btn-sm btn-danger" onclick="event.preventDefault(); this.closest('form').submit()">Delete</button>
                                     </form>
-                                    <a href="{{route('photo.edit',$photo->id)}}" class = "btn btn-warning">Edit</a>
+                                    <a href="{{route('photo.edit',$photo->id)}}" class = "btn btn-sm btn-warning">Edit</a>
                                 </div>
                             </td>
                         </tr>

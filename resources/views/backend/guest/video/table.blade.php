@@ -37,9 +37,9 @@
                                     <form action="{{route('video.destroy',$video->id)}}" id = "delete.form" method = "POST">
                                         @csrf
                                         @method('delete')
-                                        <button class = "btn btn-danger" onclick="event.preventDefault(); document.getElementById('delete.form').submit()">Delete</button>
+                                        <button class = "btn btn-sm btn-danger" onclick="event.preventDefault(); document.getElementById('delete.form').submit()">Delete</button>
                                     </form>
-                                    <a href="{{route('video.edit',$video->id)}}" class = "btn btn-warning">Edit</a>
+                                    <a href="{{route('video.edit',$video->id)}}" class = "btn btn-sm btn-warning">Edit</a>
                                 </div>
                             </td>
                         </tr>

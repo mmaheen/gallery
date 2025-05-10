@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\GuestController;
-use App\Http\Controllers\Backend\PhotoController;
-use App\Http\Controllers\Backend\VideoController;
 use App\Http\Controllers\Frontend\SiteController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\Admin\AdminPhotoController;
+use App\Http\Controllers\Backend\Admin\AdminVideoController;
 
 // Index 
 
@@ -35,14 +35,26 @@ Route::get('/search/video',[SiteController::class,'searchVideo'])->name('video.s
 
 Route::middleware(['auth',CheckAdmin::class])->group(function(){
     // Dashboard 
-    Route::get('/dashboard/admin',[AdminController::class,'index'])->name('admin.index');
-    Route::get('/dashboard/admin/sign-up',[AdminController::class,'signup'])->name('admin.signup');
-    Route::post('/dashboard/admin/sign-up',[AdminController::class,'adminRegister'])->name('admin.register');
-    Route::get('/dashboard/admin/settings',[AdminController::class,'settings'])->name('admin.settings');
-    Route::get('/dashboard/admin/profile',[AdminController::class,'profile'])->name('admin.profile');
-    Route::get('/dashboard/admin/photos',[AdminController::class,'photos'])->name('admin.photos');
-    Route::get('/dashboard/admin/videos',[AdminController::class,'videos'])->name('admin.videos');
-    Route::get('/dashboard/admin/categories',[AdminController::class,'categories'])->name('admin.categories');
+    Route::prefix('/dashboard/admin')->name('admin.')->group(function(){
+        Route::get('/',[AdminController::class,'index'])->name('index');
+        Route::get('/sign-up',[AdminController::class,'signup'])->name('signup');
+        Route::post('/sign-up',[AdminController::class,'adminRegister'])->name('register');
+        Route::get('/settings',[AdminController::class,'settings'])->name('settings');
+        Route::get('/profile',[AdminController::class,'profile'])->name('profile');
+        // Route::get('/videos',[AdminController::class,'videos'])->name('videos');
+        Route::get('/categories',[AdminController::class,'categories'])->name('categories');
+
+
+        Route::resources([
+            '/photo'=>AdminPhotoController::class,
+            '/video'=>AdminVideoController::class,
+        ]);
+    });
+    
+    
+    // Route::get('/dashboard/admin/photos',[AdminController::class,'photos'])->name('admin.photos');
+  
+    
     // End Dashboard 
 });
 
@@ -53,10 +65,8 @@ Route::get('/dashboard/guest/video',[GuestController::class,'videoIndex'])->name
 Route::get('/dashboard/guest/category',[GuestController::class,'categoryIndex'])->name('guest.categories');
 
 Route::resources([
-    'photo'=>PhotoController::class,
     'category'=>CategoryController::class,
     'user'=>UserController::class,
-    'video'=>VideoController::class
 ]);
 Auth::routes();
 

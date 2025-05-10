@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
 
-use File;
 use App\Models\Photo;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
-class PhotoController extends Controller
+class AdminPhotoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +15,8 @@ class PhotoController extends Controller
     public function index()
     {
         //
+        $photos = Photo::with('category','user')->latest()->paginate(10);
+        return view('backend.admin.photo.table',compact('photos'));
     }
 
     /**
@@ -80,7 +80,6 @@ class PhotoController extends Controller
     public function show(string $id)
     {
         //
-        // return $id;
         $photo = Photo::find($id);
         return view('backend.admin.photo.show',compact('photo'));
     }
@@ -102,7 +101,6 @@ class PhotoController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        // return $id;
         $photo = Photo::find($id);
         // return $photo;
         $request->validate([
@@ -134,8 +132,6 @@ class PhotoController extends Controller
         catch(Exception $error){
             dd($error->getMessage());
         }
-
-        return $request;
     }
 
     /**

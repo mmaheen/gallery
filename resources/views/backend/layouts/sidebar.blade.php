@@ -16,19 +16,19 @@
         <div class="navbar-nav w-100">
             <a href="{{Auth::user()->role === 'admin' ? route('admin.index') : route('guest.index')}}" class="nav-item nav-link {{Route::currentRouteName()=='admin.index' || Route::currentRouteName()=='guest.index' ? 'active':''}}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{Route::currentRouteName()=='photo.create'||Route::currentRouteName()=='video.create'?'active':''}}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Upload Item</a>
+                <a href="#" class="nav-link dropdown-toggle {{Route::currentRouteName()=='admin.photo.create'||Route::currentRouteName()=='admin.video.create'?'active':''}}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Upload Item</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{route('photo.create')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
-                    <a href="{{route('video.create')}}" class="dropdown-item d-flex justify-content-center">Video</a>
+                    <a href="{{route('admin.photo.create')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
+                    <a href="{{route('admin.video.create')}}" class="dropdown-item d-flex justify-content-center">Video</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
                 <a href="#" 
-                class="nav-link dropdown-toggle {{Route::currentRouteName()=='admin.photos' || Route::currentRouteName()=='guest.photos' || Route::currentRouteName()=='admin.videos' || Route::currentRouteName()=='guest.videos' || Route::currentRouteName()=='admin.categories' || Route::currentRouteName()=='guest.categories' || Route::currentRouteName()=='user.index' ? 'active':''}}" 
+                class="nav-link dropdown-toggle {{Route::currentRouteName()=='admin.photo.index' || Route::currentRouteName()=='guest.photos' || Route::currentRouteName()=='admin.video.index' || Route::currentRouteName()=='guest.videos' || Route::currentRouteName()=='admin.categories' || Route::currentRouteName()=='guest.categories' || Route::currentRouteName()=='user.index' ? 'active':''}}" 
                 data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{Auth::user()->role === 'admin' ? route('admin.photos') :route('guest.photos')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
-                    <a href="{{Auth::user()->role === 'admin' ? route('admin.videos') : route('guest.videos')}}" class="dropdown-item d-flex justify-content-center">Video</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('admin.photo.index') :route('guest.photos')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('admin.video.index') : route('guest.videos')}}" class="dropdown-item d-flex justify-content-center">Video</a>
                     <a href="{{Auth::user()->role === 'admin' ? route('admin.categories') : route('guest.categories')}}" class="dropdown-item d-flex justify-content-center">Category</a>
                     @if(Auth::user()->role == 'admin')
                         <a href="{{route('user.index')}}" class="dropdown-item d-flex justify-content-center">User</a>

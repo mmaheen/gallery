@@ -8,7 +8,7 @@
     <!-- Form Start -->
     <div class="container-fluid pt-4 px-4">
         <div class="row ">         
-            <form class="col-sm-12 col-xl-10" action="{{route('photo.store')}}" method="POST" enctype="multipart/form-data">
+            <form class="col-sm-12 col-xl-10" action="{{route('admin.photo.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Photo Upload</h6>
