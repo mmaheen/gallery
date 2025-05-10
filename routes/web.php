@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\CheckAdmin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\AdminController;
@@ -32,7 +33,7 @@ Route::get('/search/photo',[SiteController::class,'searchPhoto'])->name('photo.s
 Route::get('/search/video',[SiteController::class,'searchVideo'])->name('video.search');
 // End Frontend search
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth',CheckAdmin::class])->group(function(){
     // Dashboard 
     Route::get('/dashboard/admin',[AdminController::class,'index'])->name('dashboard.index');
     Route::get('/dashboard/admin/sign-up',[AdminController::class,'signup'])->name('dashboard.signup');
