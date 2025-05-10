@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class GuestMiddleware
+class CheckAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,15 +15,6 @@ class GuestMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->check())
-        {
-            if(auth()->user()->role=='admin'){
-                return $next($request);
-            }
-            else{
-                return to_route('dashboard.guest.index');
-            }
-        }
-        
+        return $next($request);
     }
 }
