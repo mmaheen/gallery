@@ -35,19 +35,20 @@ Route::get('/search/video',[SiteController::class,'searchVideo'])->name('video.s
 
 Route::middleware(['auth',CheckAdmin::class])->group(function(){
     // Dashboard 
-    Route::get('/dashboard/admin',[AdminController::class,'index'])->name('dashboard.index');
-    Route::get('/dashboard/admin/sign-up',[AdminController::class,'signup'])->name('dashboard.signup');
+    Route::get('/dashboard/admin',[AdminController::class,'index'])->name('admin.index');
+    Route::get('/dashboard/admin/sign-up',[AdminController::class,'signup'])->name('admin.signup');
     Route::post('/dashboard/admin/sign-up',[AdminController::class,'adminRegister'])->name('admin.register');
-    Route::get('/dashboard/admin/settings',[AdminController::class,'settings'])->name('dashboard.settings');
-    Route::get('/dashboard/admin/profile',[AdminController::class,'profile'])->name('dashboard.profile');
+    Route::get('/dashboard/admin/settings',[AdminController::class,'settings'])->name('admin.settings');
+    Route::get('/dashboard/admin/profile',[AdminController::class,'profile'])->name('admin.profile');
+    Route::get('/dashboard/admin/photos',[AdminController::class,'photos'])->name('admin.photos');
     // End Dashboard 
 });
 
 //Backend guest
-Route::get('/dashboard/guest',[GuestController::class,'index'])->name('dashboard.guest.index');
-Route::get('/dashboard/guest/photo',[GuestController::class,'photoIndex'])->name('dashboard.guest.photo.index');
-Route::get('/dashboard/guest/video',[GuestController::class,'videoIndex'])->name('dashboard.guest.video.index');
-Route::get('/dashboard/guest/category',[GuestController::class,'categoryIndex'])->name('dashboard.guest.category.index');
+Route::get('/dashboard/guest',[GuestController::class,'index'])->name('guest.index');
+Route::get('/dashboard/guest/photo',[GuestController::class,'photoIndex'])->name('guest.photos');
+Route::get('/dashboard/guest/video',[GuestController::class,'videoIndex'])->name('guest.videos');
+Route::get('/dashboard/guest/category',[GuestController::class,'categoryIndex'])->name('guest.categories');
 
 Route::resources([
     'photo'=>PhotoController::class,

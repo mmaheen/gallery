@@ -44,6 +44,11 @@ class AdminController extends Controller
         return redirect()->route('dashboard.index');
     }
 
+    public function photos(){  
+        $photos = Photo::with('category','user')->latest()->paginate(10);
+        return view('backend.admin.photo.table',compact('photos'));
+    }
+
     public function settings(){
         return view('backend.admin.settings');
     }

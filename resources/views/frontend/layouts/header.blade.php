@@ -31,7 +31,7 @@
 
                 @else
                     <li class="nav-item">
-                        <a class="nav-link nav-link-2" href="{{Auth::user()->role === 'admin' ? route('dashboard.index'):route('dashboard.guest.index')}}">{{Auth::user()->name}}</a>
+                        <a class="nav-link nav-link-2" href="{{Auth::user()->role === 'admin' ? route('dashboard.index'):route('guest.index')}}">{{Auth::user()->name}}</a>
                     </li>
                 @endguest
             </ul>

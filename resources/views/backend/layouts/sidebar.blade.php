@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="navbar-nav w-100">
-            <a href="{{Auth::user()->role === 'admin' ? route('dashboard.index') : route('dashboard.guest.index')}}" class="nav-item nav-link {{Route::currentRouteName()=='dashboard.index' ? 'active':''}}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <a href="{{Auth::user()->role === 'admin' ? route('admin.index') : route('guest.index')}}" class="nav-item nav-link {{Route::currentRouteName()=='admin.index' || Route::currentRouteName()=='guest.index' ? 'active':''}}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle {{Route::currentRouteName()=='photo.create'||Route::currentRouteName()=='video.create'?'active':''}}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Upload Item</a>
                 <div class="dropdown-menu bg-transparent border-0">
@@ -24,12 +24,12 @@
             </div>
             <div class="nav-item dropdown">
                 <a href="#" 
-                class="nav-link dropdown-toggle {{Route::currentRouteName()=='photo.index' || Route::currentRouteName()=='video.index' || Route::currentRouteName()=='category.index' ||Route::currentRouteName()=='user.index' ? 'active':''}}" 
+                class="nav-link dropdown-toggle {{Route::currentRouteName()=='admin.photos' || Route::currentRouteName()=='guest.photos' || Route::currentRouteName()=='video.index' || Route::currentRouteName()=='guest.videos' || Route::currentRouteName()=='category.index' || Route::currentRouteName()=='guest.categories' || Route::currentRouteName()=='user.index' ? 'active':''}}" 
                 data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{Auth::user()->role === 'admin' ? route('photo.index') :route('dashboard.guest.photo.index')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
-                    <a href="{{Auth::user()->role === 'admin' ? route('video.index') : route('dashboard.guest.video.index')}}" class="dropdown-item d-flex justify-content-center">Video</a>
-                    <a href="{{Auth::user()->role === 'admin' ? route('category.index') : route('dashboard.guest.category.index')}}" class="dropdown-item d-flex justify-content-center">Category</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('admin.photos') :route('guest.photos')}}" class="dropdown-item d-flex justify-content-center">Photo</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('video.index') : route('guest.videos')}}" class="dropdown-item d-flex justify-content-center">Video</a>
+                    <a href="{{Auth::user()->role === 'admin' ? route('category.index') : route('guest.categories')}}" class="dropdown-item d-flex justify-content-center">Category</a>
                     @if(Auth::user()->role == 'admin')
                         <a href="{{route('user.index')}}" class="dropdown-item d-flex justify-content-center">User</a>
                     @endif
@@ -37,9 +37,9 @@
             </div>
             @if(Auth::user()->role == 'admin')
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{Route::currentRouteName()=='dashboard.signup' ? 'active':''}}" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Authentication</a>
+                <a href="#" class="nav-link dropdown-toggle {{Route::currentRouteName()=='admin.signup' ? 'active':''}}" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Authentication</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{route('dashboard.signup')}}" class="dropdown-item d-flex justify-content-center">Sign Up</a>
+                    <a href="{{route('admin.signup')}}" class="dropdown-item d-flex justify-content-center">Sign Up</a>
                 </div>
             </div>
             @endif
