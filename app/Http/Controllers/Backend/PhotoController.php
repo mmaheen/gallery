@@ -63,7 +63,13 @@ class PhotoController extends Controller
             $photo->save();
             session()->flash('create','Photo upload success');
             
-            return redirect()->route('photo.index');
+            if(auth()->user()->role == 'admin'){
+                return redirect()->route('photo.index');
+            }
+            else{
+                return redirect()->route('dashboard.guest.photo.index');
+            }
+            
         }
         catch(Exception $error){
             dd($error->getMessage());
@@ -116,7 +122,13 @@ class PhotoController extends Controller
             $photo->photo = $photo_name;
             $photo->update();
             session()->flash('update','Photo Update success');
-            return redirect()->route('photo.index');
+            
+            if(auth()->user()->role == 'admin'){
+                return redirect()->route('photo.index');
+            }
+            else{
+                return redirect()->route('dashboard.guest.photo.index');
+            }
         }
         catch(Exception $error){
             dd($error->getMessage());
